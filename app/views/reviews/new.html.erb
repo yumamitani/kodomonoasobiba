@@ -1,0 +1,16 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_for @tweet do |form| %>
+      <h3>
+        投稿する
+      </h3>
+      <%= form.text_field :name, placeholder: "ニックネーム" %>
+      <%= form.text_field :subject, placeholder: "件名" %>
+      <%= form.text_field :subject, placeholder: "都道府県" %>
+      <%= form.text_field :image, placeholder: "画像Url" %>
+      <%= form.text_field :image, placeholder: "動画Url" %>
+      <%= form.text_area :text, placeholder: "コメント" , rows: "200" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

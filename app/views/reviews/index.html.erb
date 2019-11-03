@@ -1,9 +1,5 @@
-<ul class="MuniList__list clearfix">
-              <li class="MuniList__item"><a href="https://www.satofull.jp/static/kanto/ibaraki.php" style="opacity: 1;">茨城県</a></li><!--
-           --><li class="MuniList__item"><a href="https://www.satofull.jp/static/kanto/tochigi.php" style="opacity: 1;">栃木県</a></li><!--
-           --><li class="MuniList__item"><a href="https://www.satofull.jp/static/kanto/gunma.php" style="opacity: 1;">群馬県</a></li><!--
-           --><li class="MuniList__item"><a href="https://www.satofull.jp/static/kanto/saitama.php" style="opacity: 1;">埼玉県</a></li><!--
-           --><li class="MuniList__item"><a href="https://www.satofull.jp/static/kanto/chiba.php" style="opacity: 1;">千葉県</a></li><!--
-           --><li class="MuniList__item"><a href="https://www.satofull.jp/static/kanto/tokyo.php" style="opacity: 1;">東京都</a></li><!--
-           --><li class="MuniList__item"><a href="https://www.satofull.jp/static/kanto/kanagawa.php">神奈川県</a></li>
-            </ul>
+ <div class="contents row" >
+    <% @reviews.each do |review| %>
+    <p><%= review.text %></p>
+  <% end %>
+  </div>
