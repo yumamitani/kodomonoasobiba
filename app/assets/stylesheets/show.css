@@ -1,0 +1,9 @@
+.post_image{
+  height: 300px;
+  width: 500px;
+  background-size: cover;
+}
+
+.flash_message{
+  background-color: orange;
+}

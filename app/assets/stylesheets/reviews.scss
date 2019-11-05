@@ -1,3 +1,38 @@
-// Place all the styles related to the reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.about_path {
+  font-size: 70px;
+  color: black;
+  float: left;
+}
+
+.pref_header{
+  background-image: url("/park.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  font-size: 80px;
+  color:black;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.pref_index{
+  
+}
+
+
+
+.pref_list{
+  font-size: 100px;
+  height: 30px;
+  color: whitesmoke;
+  list-style: none;
+  
+
+}
+
+.saitama_url{
+  font-size: 30px;
+  color: black;
+}
+
+

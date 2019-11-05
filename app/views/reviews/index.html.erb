@@ -1,5 +1,15 @@
- <div class="contents row" >
-    <% @reviews.each do |review| %>
-    <p><%= review.text %></p>
-  <% end %>
-  </div>
+<div class= pref_header>都道府県一覧
+  <div class = pref_index>
+      <li class = pref_list>
+      <%= link_to "東京都","/tokyo",class:"saitama_url"  %>
+      <%= link_to "神奈川県","/kanagawa",class:"saitama_url"  %>
+      <%= link_to "千葉県","/chiba",class:"saitama_url"  %>
+      <%= link_to "埼玉県","/saitama",class:"saitama_url"  %>
+      <%= link_to "茨城県","/ibaraki",class:"saitama_url"  %>
+      <%= link_to "栃木県","/tochigi",class:"saitama_url"  %>
+      <%= link_to "群馬県","/gunnma",class:"saitama_url"  %>
+      </li>
+    </div>
+
+
+</div>

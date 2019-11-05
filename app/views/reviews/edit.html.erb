@@ -1,13 +1,10 @@
 <div class="contents row">
-    <%= form_tag('/reviews', method: :post) do %>
-      <h3>
-        投稿する
-      </h3>
-          <div class = error_message>
-          <% @review.errors.full_messages.each do |message| %>
-          <%= message %>
-          <% end %>
-          </div>
+    <%= form_tag("/reviews/#{@review.id}/update", method: :post) do %>
+      <div class = error_message>
+        <% @review.errors.full_messages.each do |message| %>
+        <%= message %>
+        <% end %>
+      </div>
       <div>
         <label>ニックネーム:</label>
         <input placeholder="ニックネーム" type="text" id="name" name="nickname" value=<%= @review.nickname %>>
@@ -24,18 +21,18 @@
       </div>
 
       <div>
-        <label>本文:</label>
-        <textarea placeholder="本文" id="text" name = "text"><%= @review.text %></textarea>
+        <label>Message:</label>
+        <textarea placeholder="本文" id="text" name = "text" ><%= @review.text %></textarea>
       </div>
 
       <div>
         <label>画像:</label>
-        <input placeholder="画像URL" type="text" id="image" name="image">
+        <input placeholder="画像URL" type="text" id="image" name="image" value=<%= @review.image %>>
       </div>
 
       <div>
         <label>動画:</label>
-        <input placeholder="動画URL" type="text" id="movie" name="movie">
+        <input placeholder="動画URL" type="text" id="movie" name="movie" value=<%= @review.movie %>>
       </div>
 
       <div>

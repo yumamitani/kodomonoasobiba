@@ -1,0 +1,28 @@
+.review_all{
+  background:cornsilk;
+  
+}
+
+.saitamaken{
+  padding: 0 0 20px 450px;
+  color:black;
+  font-size: 50px;
+
+}
+.review_main{
+  background-color:white;
+  height: 1000px;
+  width: 800px;
+  margin: 0 auto;
+  
+}
+.review_subject{
+  box-shadow:  0 2px 6px burlywood;
+  padding:20px 100px;
+}
+
+.pagenate{
+  margin: 50px auto 30px;
+  background-color:yellow;
+  text-align: center;
+}

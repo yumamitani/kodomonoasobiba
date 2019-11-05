@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      nickname: ニックネーム
+      prefecture: 都道府県
+      subject: 件名
+      text: 本文
+      
