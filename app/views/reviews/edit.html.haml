@@ -1,0 +1,32 @@
+.contents.row
+  = form_tag("/reviews/#{@review.id}/update", method: :post) do
+    %div>
+    error_message&gt;
+    - @review.errors.full_messages.each do |message|
+      = message
+  %div
+    %label &#x90FD;&#x9053;&#x5E9C;&#x770C;:
+    %input#prefecture{:name => "prefecture", :placeholder => "都道府県", :type => "text"}/
+    = @review.prefecture
+    \&gt;
+  %div
+    %label &#x4EF6;&#x540D;:
+    %input#subject{:name => "subject", :placeholder => "件名", :type => "text"}/
+    = @review.subject
+    \&gt;
+  %div
+    %label &#x672C;&#x6587;:
+    %textarea#text{:name => "text", :placeholder => "自由に文章を書いてください"}= @review.text
+  %div
+    %label &#x753B;&#x50CF;:
+    %input#image{:name => "image", :placeholder => "画像URL", :type => "text"}/
+    = @review.image
+    \&gt;
+  %div
+    %label &#x53C2;&#x7167;URL:
+    %input#movie{:name => "movie", :placeholder => "参照URL", :type => "text"}/
+    = @review.movie
+    \&gt;
+  %div
+    %input{:type => "submit"}>/
+    , value="&#x6295;&#x7A3F;"&gt;

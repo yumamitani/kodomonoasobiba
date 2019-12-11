@@ -1,23 +1,32 @@
 .home{
-  background-image:url("/home.jpg");
+  background-image:url("/road.jpg");
   background-size: cover;
   height: 100%;
   width: 100%;
   font-size: 30px;
-  color:yellow;
+  color:black;
+}
+
+.home_title{
+  font-size: 120px;
+  color: black;
+  text-align: center;
+  font-family: 'Comic Sans MS';
+  background:linear-gradient(transparent 60%, #FFFF00 50%);
 }
 
 .main_message{
-  padding-top: 100px;
+  padding-top: 30pxpx;
   text-align: center;
   font-size: 80px;
   color:white;
-  
+  padding-top: 200px ;
 }
 
 .pref_link{
-  text-align: center;
+  display: inline-block;
   font-size: 50px;
   background-color: white;
-  margin: 100px 500px 50px 500px;
+  margin: 200px  auto 0 auto;
+  text-align: center;
 }

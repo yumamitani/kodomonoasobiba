@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user, {only:[:edit, :update, :index,]}
+  before_action :ensure_correct_user, {only:[:edit, :update, :destroy, ]}
 
   def home
   end
@@ -15,12 +17,19 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(reviews_params)
-   if @review.save
-    redirect_to("/")
-   else
-    render("reviews/new")
-   end
+    @review = Review.new(
+      prefecture: reviews_params[:prefecture], 
+      subject: reviews_params[:subject], 
+      text: reviews_params[:text],
+      image: reviews_params[:image],
+      movie: reviews_params[:movie],
+      user_id: @current_user.id)
+
+    if @review.save
+      redirect_to("/")
+    else
+      render("reviews/new")
+    end
   end
 
   def edit
@@ -51,15 +60,26 @@ class ReviewsController < ApplicationController
   def show
     @id = params[:id]
     @review = Review.find_by(id: params[:id])
+    @user = User.find(@review.user_id)
+    @likes_count = Like.where(review_id: @review.id).count
   end
 
   def saitama
     @reviews = Review.where(prefecture: "埼玉県").order("created_at DESC").page(params[:page]).per(12)
+    
   end
 
   private
   def reviews_params
-    params.permit(:nickname, :prefecture, :subject, :text, :image, :movie)
+    params.permit(:prefecture, :subject, :text, :image, :movie )
   end
 
+  def ensure_correct_user
+    @review= Review.find_by(id: params[:id])
+
+    if @current_user.id != @review.user.id
+      flash[:notice]="権限がありません"
+      redirect_to("/reviews/index")
+    end
+  end
 end

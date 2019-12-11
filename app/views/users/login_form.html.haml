@@ -1,0 +1,10 @@
+%h3 LOGIN
+- if @error_message
+  %div
+    = @error_message
+= form_tag("/login") do
+  %p ニックネーム：
+  %input{:name => "nickname", :value => "#{@nickname}"}/
+  %p パスワード：
+  %input{:name => "password", :type => "password", :value => "#{@password}"}/
+  %input{:type => "submit", :value => "ログイン"}/

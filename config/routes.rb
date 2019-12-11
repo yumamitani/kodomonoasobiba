@@ -10,4 +10,16 @@ Rails.application.routes.draw do
   post 'reviews/:id/update'=> 'reviews#update'
   post 'reviews/:id/destroy'=> 'reviews#destroy'
 
+  get "users/index"=>"users#index"
+  get "users/:id/show" => "users#show"
+  get "users/new" => "users#new"
+  post "users/create"=> "users#create"
+  get "users/:id/edit" =>"users#edit"
+  post "users/:id/update"=>"users#update"
+  get "login"=> "users#login_form"
+  post "login" => "users#login"
+  post "logout"=> "users#logout"
+
+  post "likes/:review_id/create"=> "likes#create"
+  post "likes/:review_id/destroy"=> "likes#destroy"
 end

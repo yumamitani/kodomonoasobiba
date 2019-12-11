@@ -1,0 +1,8 @@
+%div
+.user_home
+  %h3 ユーザー一覧
+  .user_list
+    - @users.each do |user|
+      .user_profile
+        %p= link_to("#{user.nickname}","/users/#{user.id}/show")
+        %img{:src => " /user_images/#{user.image_name} "}/

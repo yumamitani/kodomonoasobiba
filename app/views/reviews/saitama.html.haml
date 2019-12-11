@@ -1,0 +1,10 @@
+.review_all
+  .saitamaken ~埼玉県の投稿一覧~
+  .review_main
+    - @reviews.each do |review|
+      .review_subject
+        = link_to review.subject ,"/show/#{review.id}"
+        %a.reviewer （投稿者）
+        = link_to review.user.nickname ,"/show/#{review.id}", class:"user_nickname"
+    .pagenate
+      = paginate(@reviews)

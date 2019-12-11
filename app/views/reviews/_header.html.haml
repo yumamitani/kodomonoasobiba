@@ -1,0 +1,18 @@
+.header
+  .header__bar
+    .header__bar--tittle
+      =link_to root_path do
+        ASOBIBA
+    .header__bar--menu
+      - if session[:user_id]
+        %a= link_to("#{@current_user.nickname}", "/users/#{@current_user.id}/show")
+        %a.post{:href => "/reviews/new"} 投稿する
+        = link_to "USERS" , "/users/index"
+        = link_to "LOGOUT" , "/logout", {method: :post}
+      - else
+        = link_to "ABOUT","/about",class:about_path
+        = link_to "登録" , "/users/new"
+        = link_to "LOGIN" , "/login"
+.flash_message
+  - if flash[:notice]
+    = flash[:notice]
