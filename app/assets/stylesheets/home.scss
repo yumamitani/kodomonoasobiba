@@ -1,32 +1,48 @@
 .home{
   background-image:url("/road.jpg");
   background-size: cover;
-  height: 100%;
+  height: 800px;
   width: 100%;
   font-size: 30px;
   color:black;
-}
 
-.home_title{
-  font-size: 120px;
-  color: black;
-  text-align: center;
-  font-family: 'Comic Sans MS';
-  background:linear-gradient(transparent 60%, #FFFF00 50%);
-}
 
-.main_message{
-  padding-top: 30pxpx;
-  text-align: center;
-  font-size: 80px;
-  color:white;
-  padding-top: 200px ;
-}
-
-.pref_link{
-  display: inline-block;
-  font-size: 50px;
-  background-color: white;
-  margin: 200px  auto 0 auto;
-  text-align: center;
+  .main_message{
+    font-size: 100px;
+    color:whitesmoke;
+    padding: 100px 0 0 30px;
+    font-family: 'ヒラギノ角ゴ Std W8'
+    'Hiragino Kaku Gothic Std'
+    （Macintosh OS X）f;
+    font-weight: bold;
+    text-shadow: black 1px 1px 2px;
+  }
+  .sub_message{
+    font-size: 30px;
+    color:whitesmoke;
+    padding: 10px 0 0 30px;
+    font-family: 'ヒラギノ角ゴ Std W8'
+    'Hiragino Kaku Gothic Std'
+    （Macintosh OS X）f;
+    font-weight: bold;
+    text-shadow: black 1px 1px 2px;
+  }
+  .pref_link{
+    display: block;
+    height: 250px;
+    width: 250px;
+    border-radius: 150px;
+    font-size: 40px;
+    background-color:#ffffdb;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    line-height: 240px;
+    color: black;
+    font-weight: bold;
+  }
+  .pref_link:hover{
+    color: #4169e1;
+  }
 }

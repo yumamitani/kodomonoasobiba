@@ -1,18 +1,19 @@
 .header
   .header__bar
     .header__bar--tittle
-      =link_to root_path do
+      =link_to root_path, class:"header__bar--tittle" do
         ASOBIBA
     .header__bar--menu
       - if session[:user_id]
-        %a= link_to("#{@current_user.nickname}", "/users/#{@current_user.id}/show")
-        %a.post{:href => "/reviews/new"} 投稿する
-        = link_to "USERS" , "/users/index"
-        = link_to "LOGOUT" , "/logout", {method: :post}
+        = image_tag "/user_images/#{@current_user.image_name}", class:"user-image"
+        = link_to"#{@current_user.nickname}", "/users/#{@current_user.id}/show", class:"link", id: "user-name"
+        = link_to "投稿する" , "/reviews/new", class:"link"
+        = link_to "USERS" , "/users/index",  class:"link"
+        = link_to "LOGOUT" , "/logout", method: :post,  class:"link"
       - else
-        = link_to "ABOUT","/about",class:about_path
-        = link_to "登録" , "/users/new"
-        = link_to "LOGIN" , "/login"
+        = link_to "ABOUT","/about", class:"link"
+        = link_to "登録" , "/users/new", class:"link"
+        = link_to "LOGIN" , "/login", class:"link"
 .flash_message
   - if flash[:notice]
     = flash[:notice]
