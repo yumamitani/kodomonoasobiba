@@ -1,0 +1,92 @@
+.prefecture-index-area
+  .review-area
+    .review-area__tittle
+      ="#{@prefecture.name}の新着投稿一覧"
+    .review-area__contents
+      .contents-box
+        .contents-box__image{:style => "background-image: url(#{@review.image});"}
+        .contents-box__right
+          .contents-box__user
+            (投稿者)開発さん
+          .contents-box__subject
+            .contents-box__subject--title
+              (件名)遊具が楽しい公園
+            .contents-box__subject--like
+              %i.far.fa-grin-squint 1
+          .contents-box__text
+            遊具がとにかく大きいです。子供を遊ばせながら、大人も運動不足解消出来ちゃうかも！
+      .contents-box
+      .contents-box
+      .contents-box
+      .contents-box
+      .contents-box
+      .contents-box
+      .contents-box
+      .contents-box
+      .contents-box
+  .ranking-area
+    .ranking-area__title
+      ="#{@prefecture.name}の記事”いいね”ランキング"
+    .ranking-area__contents
+      .ranking-number
+        =fa_icon "star", class:"icon1"
+        第１位
+      .contents-box
+        .contents-box__image{:style => "background-image: url(#{@review.image});"}
+        .contents-box__right
+          .contents-box__user
+            (投稿者)開発さん
+          .contents-box__subject
+            .contents-box__subject--title
+              (件名)遊具が楽しい公園
+            .contents-box__subject--like
+              %i.far.fa-grin-squint 1
+          .contents-box__text
+            遊具がとにかく大きいです。子供を遊ばせながら、大人も運動不足解消出来ちゃうかも！
+      .ranking-number
+        =fa_icon "star", class:"icon2"
+        第２位
+      .contents-box
+        .contents-box__image{:style => "background-image: url(#{@review.image});"}
+        .contents-box__right
+          .contents-box__user
+            (投稿者)開発さん
+          .contents-box__subject
+            .contents-box__subject--title
+              (件名)遊具が楽しい公園
+            .contents-box__subject--like
+              %i.far.fa-grin-squint 1
+          .contents-box__text
+            遊具がとにかく大きいです。子供を遊ばせながら、大人も運動不足解消出来ちゃうかも！
+      .ranking-number
+        =fa_icon "star", class:"icon3"
+        第３位
+      .contents-box
+        .contents-box__image{:style => "background-image: url(#{@review.image});"}
+        .contents-box__right
+          .contents-box__user
+            (投稿者)開発さん
+          .contents-box__subject
+            .contents-box__subject--title
+              (件名)遊具が楽しい公園
+            .contents-box__subject--like
+              %i.far.fa-grin-squint 1
+          .contents-box__text
+            遊具がとにかく大きいです。子供を遊ばせながら、大人も運動不足解消出来ちゃうかも！
+
+
+
+
+
+
+
+
+  -# ="#{@prefecture.name}の投稿一覧"
+  -# .review_main
+  -#   - @reviews.each do |review|
+  -#     .review_subject
+  -#       = link_to review.subject ,"/reviews/#{review.id}"
+  -#       %a.reviewer （投稿者）
+  -#       = link_to review.user.nickname ,"/users/#{review.user.id}", class:"user_nickname"
+  -#   .pagenate
+  -#     = paginate(@reviews)

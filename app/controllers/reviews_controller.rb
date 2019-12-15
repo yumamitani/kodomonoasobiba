@@ -64,11 +64,6 @@ class ReviewsController < ApplicationController
     @likes_count = Like.where(review_id: @review.id).count
   end
 
-  def saitama
-    @reviews = Review.where(prefecture: "埼玉県").order("created_at DESC").page(params[:page]).per(12)
-    
-  end
-
   private
   def reviews_params
     params.permit(:prefecture, :subject, :text, :image, :movie )
