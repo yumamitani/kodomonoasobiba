@@ -68,5 +68,7 @@ gem 'sprockets', '3.7.2'
 gem 'rails-i18n'
 gem'kaminari'
 gem "haml-rails"
+gem 'font-awesome-sass'
+gem "font-awesome-rails"
 
 

@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
+  resources :prefectures, only: :show
   root "reviews#home"
   get "reviews/index"=> 'reviews#index'
   get 'about'=> 'reviews#about'
   get 'reviews/new'  =>  'reviews#new' 
   get 'saitama' => 'reviews#saitama'
-  get 'show/:id'=> 'reviews#show'
+  get 'reviews/:id'=> 'reviews#show'
   get 'reviews/:id/edit'=> 'reviews#edit'
   post 'reviews'=> 'reviews#create'
   post 'reviews/:id/update'=> 'reviews#update'
   post 'reviews/:id/destroy'=> 'reviews#destroy'
 
   get "users/index"=>"users#index"
-  get "users/:id/show" => "users#show"
+  get "users/:id" => "users#show"
   get "users/new" => "users#new"
   post "users/create"=> "users#create"
   get "users/:id/edit" =>"users#edit"
@@ -22,4 +23,5 @@ Rails.application.routes.draw do
 
   post "likes/:review_id/create"=> "likes#create"
   post "likes/:review_id/destroy"=> "likes#destroy"
+
 end

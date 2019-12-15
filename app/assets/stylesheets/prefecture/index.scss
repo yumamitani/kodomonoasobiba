@@ -1,0 +1,147 @@
+.prefecture-index-area{
+  // background-color:gray;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+.review-area{
+// background-color:red;
+height: 1000px;
+width: 750px;
+margin-right: 30px;
+padding-top: 30px;
+
+  &__tittle{
+    background-color:whitesmoke;
+    height: 50px;
+    width: 735px;
+    font-size: 18px;
+    line-height: 50px;
+    font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    font-weight: bold;
+    padding-left: 15px;
+  }
+  &__contents{
+    background-color:whitesmoke;
+    width: 750px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.contents-box{
+background-color:white;
+height: 150px;
+width: 340px;
+margin:15px 15px 15px 15px;
+font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+display: flex;
+font-size: 13px;
+  .contents-box__image{
+    // background-color:firebrick;
+    height: 150px;
+    width: 160px;
+    border: solid 1px gray;
+    box-sizing: border-box; 
+    }
+  .contents-box__right{
+    // background-color:goldenrod;
+    height: 150px;
+    width: 197px;
+    box-sizing: border-box; 
+    .contents-box__user{
+    // background-color:green;
+    height: 25px;
+    width: 197px;
+    line-height: 25px;
+    padding-left: 2px ;
+    border: solid 1px gray;
+    text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .contents-box__subject{
+      // background-color:palevioletred;
+      height: 35px;
+      width: 197px;
+      display: flex;
+      padding-left: 2px ;
+      border: solid 1px gray;
+      word-wrap: break-word;
+      &--title{
+      // background-color:palevioletred;
+      height: 35px;
+      width: 160px;
+      line-height: 30px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      }    
+      &--like{
+        // background-color:seagreen;
+        height: 35px;
+        width: 30px;
+        line-height: 30px;
+        font-size: 15px;
+        color:crimson;
+      }
+    }
+    .contents-box__text{
+      // background-color:darkolivegreen;
+      height: 80px;
+      width: 197px;
+      padding: 2px 0px 2px 2px;
+      border: solid 1px gray;
+      text-overflow: ellipsis;
+    }
+  }      
+}
+.prefecture-index-link{
+  display: inline-block;
+  font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  margin-top: 30px;
+  border:solid 2px black;
+  padding: 10px 15px 10px 15px;
+  background-color:whitesmoke;
+}
+
+.ranking-area{
+  height: 800px;
+  width: 400px;
+  position: absolute;
+  right: 0;
+  margin-top: 30px;
+  font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  .ranking-area__title{
+    background-color: whitesmoke;
+    height: 50px;
+    width: 400px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: bold;
+    padding-left: 15px;
+  }
+  .ranking-area__contents{
+    background-color:whitesmoke;
+    height: 800px;
+    width: 400px;
+    margin-top: 30px;
+    padding: 0.1px 0.1px 0.1px 12px;
+    .ranking-number{
+      font-size: 20px;
+    }
+    .icon1{
+      color:gold;
+      font-size:30px;
+    }
+    .icon2{
+      color:silver;
+      font-size:30px;
+    }
+    .icon3{
+      color:brown;
+      font-size:30px;
+    }
+  }
+}
