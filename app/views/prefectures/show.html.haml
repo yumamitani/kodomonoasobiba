@@ -3,27 +3,25 @@
     .review-area__tittle
       ="#{@prefecture.name}の新着投稿一覧"
     .review-area__contents
-      .contents-box
-        .contents-box__image{:style => "background-image: url(#{@review.image});"}
-        .contents-box__right
-          .contents-box__user
-            (投稿者)開発さん
-          .contents-box__subject
-            .contents-box__subject--title
-              (件名)遊具が楽しい公園
-            .contents-box__subject--like
-              %i.far.fa-grin-squint 1
-          .contents-box__text
-            遊具がとにかく大きいです。子供を遊ばせながら、大人も運動不足解消出来ちゃうかも！
-      .contents-box
-      .contents-box
-      .contents-box
-      .contents-box
-      .contents-box
-      .contents-box
-      .contents-box
-      .contents-box
-      .contents-box
+      -@reviews.each do |review|
+      -likes_count = Like.where(review_id: review.id).count
+        =link_to "/reviews/#{review.id}", class:"contents-box" do
+          .contents-box__image{:style => "background-image: url(#{review.image});"}
+          .contents-box__right
+            .contents-box__user
+              =review.user.nickname
+            .contents-box__subject
+              .contents-box__subject--title
+                =review.subject
+              .contents-box__subject--like
+                %i.far.fa-grin-squint
+                  =likes_count
+            .contents-box__text
+              =review.text
+    =link_to "/reviews/index", class:"prefecture-index-link" do
+      都道府県一覧に戻る
+      
+      
   .ranking-area
     .ranking-area__title
       ="#{@prefecture.name}の記事”いいね”ランキング"
