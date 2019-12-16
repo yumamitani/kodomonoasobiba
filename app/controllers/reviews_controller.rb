@@ -58,8 +58,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @id = params[:id]
-    @review = Review.find_by(id: params[:id])
+    @review = Review.find(params[:id])
     @user = User.find(@review.user_id)
     @likes_count = Like.where(review_id: @review.id).count
   end
