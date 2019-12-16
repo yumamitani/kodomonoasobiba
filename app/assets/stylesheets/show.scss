@@ -1,11 +1,6 @@
-
+@import "variables";
 .wrapper{
-  font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  color:black;
-  background-color: whitesmoke;
-  width: 1200px;
-  margin: 0 auto;
-
+  @include wrapper;
   .top-area{
     display: flex;
     &__image{
@@ -66,9 +61,7 @@
       margin: 15px 15px 0 15px ;
       &__title{ 
         width: 585px;
-        height: 40px;
-        font-weight: bold;
-        font-size: 20px;
+        @include s-title;
       }
       &__main{
         background-color:white;
@@ -88,9 +81,7 @@
       margin: 15px 15px 0 15px ;
       &__title{
         width: 585px;
-        height: 40px;
-        font-weight: bold;
-        font-size: 20px;
+        @include s-title;
       }
       &__main{
         width: 550px;
