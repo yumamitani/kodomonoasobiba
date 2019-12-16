@@ -1,0 +1,166 @@
+
+.wrapper{
+  font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color:black;
+  background-color: whitesmoke;
+  width: 1200px;
+  margin: 0 auto;
+
+  .top-area{
+    display: flex;
+    &__image{
+      background-color: crimson;
+      width: 700px;
+      height: 600px;
+      margin: 30px 15px 15px 15px;
+      background-size: cover;
+      border: solid 1px black;
+      box-sizing: border-box;
+    }
+    &__detail{
+      
+      &--map{
+        background-color:whitesmoke;
+        width: 440px;
+        height: 390px;
+        margin: 30px 15px 15px 15px;
+        .address{
+        background-color:white;
+        width: 440px;
+        height: 50px;
+        padding: 4px;
+        border: solid 1px black;
+        box-sizing: border-box;
+        }
+        .google-map{
+          background-color: silver;
+          width: 440px;
+          height: 330px;
+          margin-top: 10px;
+          border: solid 1px black;
+          box-sizing: border-box;
+        }
+      }
+      &--imfomation{
+        background-color: white;
+        width: 440px;
+        height: 190px;
+        margin: 20px 15px 15px 15px;
+        border: solid 1px black;
+        tr{
+          border: solid 1px black;
+          padding-left: 10px;
+        }
+        th{
+          border: solid 1px black;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .bottom-area{
+    display: flex;
+    .text-area{
+      width: 585px;
+      height: 800px;
+      margin: 15px 15px 0 15px ;
+      &__title{ 
+        width: 585px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      &__main{
+        background-color:white;
+        width: 585px;
+        height: 750px;
+        margin-top:5px;
+        border: solid 1px black;
+        box-sizing: border-box;
+        padding: 5px;
+      }
+    }
+
+    .comment-area{
+     
+      width: 585px;
+      height: 800px;
+      margin: 15px 15px 0 15px ;
+      &__title{
+        width: 585px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      &__main{
+        width: 550px;
+        height: 750px;
+        margin-top:10px;
+        .comment-box{
+          background-color:white;
+          width: 540px;
+          margin-bottom:10px;
+          font-size: 15px;
+          padding: 5px;
+          border-radius: 15px 15px 15px 15px;
+          .comment-box__top{
+            display: flex;
+            .comment-username{
+             margin-left: 10px;
+             font-size: 12px;
+             font-weight: bold;
+             line-height: 25px;
+            }
+            .daytime{
+              margin-left: 15px;
+              line-height: 24px;
+            }
+          }
+          .comment-box__bottom{
+            padding: 0;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+// .post_image{
+//   height: 300px;
+//   width: 500px;
+//   background-size: cover;
+// }
+
+// .flash_message{
+//   background-color: orange;
+// }
+
+// .like_btn_already{
+//   color: crimson;
+//   font-size: 50px;
+// }
+
+// .like_btn{
+//   color:grey;
+//   font-size: 50px;
+// }
+
+// .likes_count{
+//   font-size: 30px;
+// }
+
+// .user_review_index{
+// padding-top: 30px ;
+// }
+
+// .user_likes_index{
+//   padding-top: 30px ;
+//   padding-bottom: 40px;
+// }
