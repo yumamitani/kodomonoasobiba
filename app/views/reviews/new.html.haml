@@ -1,34 +1,68 @@
-.contents.row
-  = form_tag('/reviews', method: :post) do
-    %h3
-      \&#x6295;&#x7A3F;&#x3059;&#x308B;
-    = succeed "error_message>" do
-      %div
-    - @review.errors.full_messages.each do |message|
-      = message
-  %div
-    %label &#x90FD;&#x9053;&#x5E9C;&#x770C;:
-    %input#prefecture{:name => "prefecture", :placeholder => "都道府県", :type => "text"}/
-    = @review.prefecture
-    \&gt;
-  %div
-    %label &#x4EF6;&#x540D;:
-    %input#subject{:name => "subject", :placeholder => "件名", :type => "text"}/
-    = @review.subject
-    \&gt;
-  %div
-    %label &#x672C;&#x6587;:
-    %textarea#text{:name => "text", :placeholder => "自由に文章を書いてください"}= @review.text
-  %div
-    %label &#x753B;&#x50CF;:
-    %input#image{:name => "image", :placeholder => "画像URL", :type => "text"}
-    %div
-      %label &#x53C2;&#x7167;URL:
-      %input#movie{:name => "movie", :placeholder => "参照URL", :type => "text"}
-      %div
-        %input{:type => "submit"}>/
-        , value="&#x6295;&#x7A3F;"&gt;
-  = succeed "about_url>\u203B\u53C2\u7167URL\u306B\u306F\u3054\u81EA\u8EAB\u306E\u63B2\u8F09\u3057\u305F\u3044WEB\u30DA\u30FC\u30B8\u306EURL\u3092\u8CBC\u308A\u4ED8\u3051\u3066\u304F\u3060\u3055\u3044\u3002" do
-    %span
-  %br
-    \&#x4F8B;&#xFF09;(1)youtube&#x7B49;&#x306E;&#x52D5;&#x753B;&#x30B5;&#x30A4;&#x30C8;&#x306E;URL (2)&#x3054;&#x81EA;&#x8EAB;&#x306E;&#x30D6;&#x30ED;&#x30B0;&#x306E;URL&#x3000;&#x306A;&#x3069;
+=form_for @review do |f|
+  .product-new-wrapper
+    .title_area
+      記事の投稿
+
+    .subject_area
+      .area-title
+        件名
+      = f.text_field :subject, class: "input-area"
+
+    .prefecture_area
+      .area-title
+        都道府県
+      = f.collection_select :prefecture_id, @prefectures, :id, :name, {},{class: "input-area"}
+
+    .address_area
+      .area-title
+        遊び場の住所
+      = f.text_field :address, class: "input-area"
+    .url_area
+      .area-title
+        参考URL
+      = f.text_field :movie, class: "input-area"
+    .bottom-area
+      .text_area
+        .area-title
+          記事内容
+        =f.text_area :text, class: "input-big"
+      .image_area
+        .area-title
+          画像
+        .image_area__contents
+          .image_area__contents--box
+            %label.input-small 
+              =fa_icon "picture-o" ,class:"icon"
+              =f.file_field :image, style: "display: none;"
+          .image_area__contents--box
+            %label.input-small 
+              =fa_icon "picture-o" ,class:"icon"
+              =f.file_field :image, style: "display: none;"
+          .image_area__contents--box
+            %label.input-small 
+              =fa_icon "picture-o" ,class:"icon"
+              =f.file_field :image, style: "display: none;"
+          .image_area__contents--box
+            %label.input-small 
+              =fa_icon "picture-o" ,class:"icon"
+              =f.file_field :image, style: "display: none;"
+          .image_area__contents--box
+            %label.input-small 
+              =fa_icon "picture-o" ,class:"icon"
+              =f.file_field :image, style: "display: none;"
+          .image_area__contents--box
+            %label.input-small 
+              =fa_icon "picture-o" ,class:"icon"
+              =f.file_field :image, style: "display: none;"
+          .image_area__contents--box
+            %label.input-small 
+              =fa_icon "picture-o" ,class:"icon"
+              =f.file_field :image, style: "display: none;"
+          .image_area__contents--box
+            %label.input-small 
+              =fa_icon "picture-o" ,class:"icon"
+              =f.file_field :image, style: "display: none;"
+          
+    =f.submit "投稿する",class:"submit-area"
+        
+  
