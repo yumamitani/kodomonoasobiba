@@ -60,6 +60,7 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     @user = User.find(@review.user_id)
+    @prefecture = Prefecture.find(@review.prefecture_id)
     @likes_count = Like.where(review_id: @review.id).count
   end
 

@@ -4,7 +4,7 @@
     .top-area__detail
       .top-area__detail--map
         .address
-          埼玉県さいたま市北区土呂町１−１
+          =@review.address
         .google-map
           所在地表示　googlemapを使いたい
       %table.top-area__detail--imfomation
@@ -12,31 +12,31 @@
           %th
             投稿者
           %th
-            =link_to "#" do
-              開発太郎
+            =link_to "/users/#{@user.id}" do
+              =@user.nickname
         %tr
           %th
             件名
           %th
-            バスケットボールが見られるところ
+            =@review.subject
         %tr
           %th
             都道府県
           %th
-            =link_to "#" do
-              埼玉県
+            =link_to "/prefectures/#{@review.prefecture_id}" do
+              =@prefecture.name
         %tr
           %th
             参考URL
           %th
             =link_to "#" do
-              http/sgbwsga;sLgjbdsfv.jp
+              =@review.movie
   .bottom-area
     .text-area
       .text-area__title
         記事内容
       .text-area__main
-        本文１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１
+        =@review.text
     .comment-area
       .comment-area__title
         コメント欄
