@@ -14,11 +14,13 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @prefectures= Prefecture.all
   end
 
   def create
+    @prefectures= Prefecture.all
     @review = Review.new(
-      prefecture: reviews_params[:prefecture], 
+      prefecture_id: reviews_params[:prefecture_id], 
       subject: reviews_params[:subject], 
       text: reviews_params[:text],
       image: reviews_params[:image],
@@ -66,7 +68,7 @@ class ReviewsController < ApplicationController
 
   private
   def reviews_params
-    params.permit(:prefecture, :subject, :text, :image, :movie )
+    params.require(:review).permit(:prefecture_id, :subject, :text, :image, :movie )
   end
 
   def ensure_correct_user
