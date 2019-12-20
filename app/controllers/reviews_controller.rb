@@ -15,17 +15,12 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @prefectures= Prefecture.all
+    @image = @review.images.build
   end
 
   def create
     @prefectures= Prefecture.all
-    @review = Review.new(
-      prefecture_id: reviews_params[:prefecture_id], 
-      subject: reviews_params[:subject], 
-      text: reviews_params[:text],
-      image: reviews_params[:image],
-      movie: reviews_params[:movie],
-      user_id: @current_user.id)
+    @review = Review.new(reviews_params)
 
     if @review.save
       redirect_to("/")
@@ -68,7 +63,8 @@ class ReviewsController < ApplicationController
 
   private
   def reviews_params
-    params.require(:review).permit(:prefecture_id, :subject, :text, :image, :movie )
+    params.require(:review).permit(
+    :prefecture_id, :subject, :text, :movie, :address, images_attributes: [:destroy,:id,:image_url]).merge(user_id:@current_user.id)
   end
 
   def ensure_correct_user

@@ -32,37 +32,55 @@
         .image_area__contents
           .image_area__contents--box
             %label.input-small 
-              =fa_icon "picture-o" ,class:"icon"
-              =f.file_field :image, style: "display: none;"
+              =f.fields_for :images do |i|
+                =fa_icon "picture-o" ,class:"icon"  
+                =i.file_field :image_url, style: "display: none;"
           .image_area__contents--box
             %label.input-small 
-              =fa_icon "picture-o" ,class:"icon"
-              =f.file_field :image, style: "display: none;"
+              =f.fields_for :images do |i|
+                =fa_icon "picture-o" ,class:"icon"  
+                =i.file_field :image_url, style: "display: none;"
           .image_area__contents--box
             %label.input-small 
-              =fa_icon "picture-o" ,class:"icon"
-              =f.file_field :image, style: "display: none;"
+              =f.fields_for :images do |i|
+                =fa_icon "picture-o" ,class:"icon"  
+                =i.file_field :image_url, style: "display: none;"
           .image_area__contents--box
             %label.input-small 
-              =fa_icon "picture-o" ,class:"icon"
-              =f.file_field :image, style: "display: none;"
+              =f.fields_for :images do |i|
+                =fa_icon "picture-o" ,class:"icon"  
+                =i.file_field :image_url, style: "display: none;"
           .image_area__contents--box
             %label.input-small 
-              =fa_icon "picture-o" ,class:"icon"
-              =f.file_field :image, style: "display: none;"
+              =f.fields_for :images do |i|
+                =fa_icon "picture-o" ,class:"icon"  
+                =i.file_field :image_url, style: "display: none;"
           .image_area__contents--box
             %label.input-small 
-              =fa_icon "picture-o" ,class:"icon"
-              =f.file_field :image, style: "display: none;"
+              =f.fields_for :images do |i|
+                =fa_icon "picture-o" ,class:"icon"  
+                =i.file_field :image_url, style: "display: none;"
           .image_area__contents--box
             %label.input-small 
-              =fa_icon "picture-o" ,class:"icon"
-              =f.file_field :image, style: "display: none;"
+              =f.fields_for :images do |i|
+                =fa_icon "picture-o" ,class:"icon"  
+                =i.file_field :image_url, style: "display: none;"
           .image_area__contents--box
             %label.input-small 
-              =fa_icon "picture-o" ,class:"icon"
-              =f.file_field :image, style: "display: none;"
-          
+              =f.fields_for :images do |i|
+                =fa_icon "picture-o" ,class:"icon"  
+                =i.file_field :image_url, style: "display: none;"
+            
     =f.submit "投稿する",class:"submit-area"
+
+
+    -# .image_area__contents--box
+    -#         %label.input-small 
+    -#           =f.fields_for :images do |i|
+    -#             -if @review.image?
+    -#               =image_tag "#{@review.images[0].image_url}", id: "img_preview"
+    -#             -else
+    -#               =fa_icon "picture-o" ,class:"icon"  
+    -#               =i.file_field :image_url, style: "display: none;"
         
   
