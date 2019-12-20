@@ -78,7 +78,7 @@
         background-color:white;
         border: solid 2px gray;
         &--box{
-          height: 140px;
+        height: 140px;
         width: 210px;
         border: solid 4px gray;
         border-radius: 10px 10px 10px 10px;
@@ -88,6 +88,8 @@
         display: inline-block;
         }
         .icon{
+          height: 140px;
+          width: 210px;
           font-size: 60px;
           padding:40px 0 0 75px;
           cursor: pointer;
