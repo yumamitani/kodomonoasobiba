@@ -9,8 +9,8 @@
       .review-area__mine--title
         自分の投稿一覧
       .review-area__mine--contents
-        -@user.reviews.each do |review|
-          .content-box
+        -@my_reviews.each do |review|
+          =link_to "/reviews/#{review.id}",class:"content-box" do
             .image
               =image_tag "#{review.images[0].image_url}",class:"image"
             %ul.right-box
@@ -20,15 +20,15 @@
                 =review.text
               %li.like
                 %i.far.fa-grin-squint
-                %span.likes_count= @likes.count
-        =link_to "#" ,class:"index-link" do
+                %span.likes_count= review.likes.count
+        =link_to "/users/#{@current_user.id}/myreview" ,class:"index-link" do
           全て表示する
     .review-area__like
       .review-area__like--title
         ”いいね”した投稿一覧
       .review-area__mine--contents
-        -@user.reviews.each do |review|
-          .content-box
+        -@favorite_reviews.each do |review|
+          =link_to "/reviews/#{review.id}",class:"content-box" do
             .image
               =image_tag "#{review.images[0].image_url}",class:"image"
             %ul.right-box
@@ -38,8 +38,8 @@
                 =review.text
               %li.like
                 %i.far.fa-grin-squint
-                %span.likes_count= @likes.count
-        =link_to "#" ,class:"index-link" do
+                %span.likes_count= review.likes.count
+        =link_to "/users/#{@current_user.id}/favorite" ,class:"index-link" do
           全て表示する
 
 

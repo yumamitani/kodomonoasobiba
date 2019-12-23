@@ -15,9 +15,6 @@ class PrefecturesController < ApplicationController
     @second_review= prefecture_reviews.find_by(id: second_id)
     @third_review= prefecture_reviews.find_by(id: third_id)
     
-
-   
-
     @likes= Like.where(user_id: @current_user.id)
   end
 

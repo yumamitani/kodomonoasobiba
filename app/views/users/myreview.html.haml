@@ -1,0 +1,20 @@
+.myreview-wrapper
+  .myreview-wrapper__title
+    自分の投稿一覧
+  .myreview-wrapper__contents
+    -@my_reviews.each do |review|
+      =link_to "/reviews/#{review.id}",class:"content-box" do
+        .image
+          =image_tag "#{review.images[0].image_url}",class:"image"
+        %ul.right-box
+          %li.subject
+            =review.subject
+          %li.text
+            =review.text
+          %li.like
+            %i.far.fa-grin-squint
+            %span.likes_count= review.likes.count
+    .mypage-link
+      =link_to "/users/#{@current_user.id}",class:"mypage-link__btn" do
+        マイページに戻る
+  
