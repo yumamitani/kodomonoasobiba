@@ -10,6 +10,24 @@ class UsersController < ApplicationController
   def show
     @user= User.find(params[:id])
     @likes= Like.where(user_id: @current_user.id)
+
+    @my_reviews= @user.reviews.limit(8)
+
+    favorite_ids= Like.where(user_id: @current_user.id).pluck(:review_id)
+    @favorite_reviews= Review.where(id: favorite_ids).limit(8)
+  end
+
+  def myreview
+    @user= User.find(params[:id])
+    @likes= Like.where(user_id: @current_user.id)
+    @my_reviews= @user.reviews
+  end
+
+  def favorite
+    @user= User.find(params[:id])
+    @likes= Like.where(user_id: @current_user.id)
+    favorite_ids= Like.where(user_id: @current_user.id).pluck(:review_id)
+    @favorite_reviews= Review.where(id: favorite_ids)
   end
 
   def new
