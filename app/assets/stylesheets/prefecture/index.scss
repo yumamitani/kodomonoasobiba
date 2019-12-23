@@ -50,12 +50,13 @@ font-size: 13px;
   .contents-box__right{
     // background-color:goldenrod;
     height: 150px;
-    width: 197px;
+    width: 180px;
     box-sizing: border-box; 
+    color:black;
     .contents-box__user{
     // background-color:green;
     height: 25px;
-    width: 197px;
+    width: 180px;
     line-height: 25px;
     padding-left: 2px ;
     border: solid 1px gray;
@@ -66,7 +67,7 @@ font-size: 13px;
     .contents-box__subject{
       // background-color:palevioletred;
       height: 35px;
-      width: 197px;
+      width: 180px;
       display: flex;
       padding-left: 2px ;
       border: solid 1px gray;
@@ -87,12 +88,15 @@ font-size: 13px;
         line-height: 30px;
         font-size: 15px;
         color:crimson;
+        .likes_count{
+          display: inline;
+        }
       }
     }
     .contents-box__text{
       // background-color:darkolivegreen;
       height: 80px;
-      width: 197px;
+      width: 180px;
       padding: 2px 0px 2px 2px;
       border: solid 1px gray;
       text-overflow: ellipsis;

@@ -6,7 +6,8 @@
       -@reviews.each do |review|
       -likes_count = Like.where(review_id: review.id).count
         =link_to "/reviews/#{review.id}", class:"contents-box" do
-          .contents-box__image{:style => "background-image: url(#{review.image});"}
+          -if review.images
+            =image_tag "#{review.images[0].image_url}", class: "contents-box__image"
           .contents-box__right
             .contents-box__user
               =review.user.nickname
@@ -14,7 +15,7 @@
               .contents-box__subject--title
                 =review.subject
               .contents-box__subject--like
-                %i.far.fa-grin-squint
+                %i.far.fa-grin-squint 
                   =likes_count
             .contents-box__text
               =review.text
@@ -30,7 +31,7 @@
         =fa_icon "star", class:"icon1"
         第１位
       .contents-box
-        .contents-box__image{:style => "background-image: url(#{@review.image});"}
+        -# .contents-box__image{:style => "background-image: url(#{@review.image});"}
         .contents-box__right
           .contents-box__user
             (投稿者)開発さん
@@ -45,7 +46,7 @@
         =fa_icon "star", class:"icon2"
         第２位
       .contents-box
-        .contents-box__image{:style => "background-image: url(#{@review.image});"}
+        -# .contents-box__image{:style => "background-image: url(#{@review.image});"}
         .contents-box__right
           .contents-box__user
             (投稿者)開発さん
@@ -60,7 +61,7 @@
         =fa_icon "star", class:"icon3"
         第３位
       .contents-box
-        .contents-box__image{:style => "background-image: url(#{@review.image});"}
+        -# .contents-box__image{:style => "background-image: url(#{@review.image});"}
         .contents-box__right
           .contents-box__user
             (投稿者)開発さん
