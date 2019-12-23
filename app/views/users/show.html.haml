@@ -1,4 +1,46 @@
-
+.mypage-wrapper
+  .title-area
+    .title-area__image
+      =image_tag "/user_images/#{@user.image_name}",class:"title-area__image"
+    .title-area__nickname
+      =@user.nickname
+  .review-area
+    .review-area__mine
+      .review-area__mine--title
+        自分の投稿一覧
+      .review-area__mine--contents
+        -@user.reviews.each do |review|
+          .content-box
+            .image
+              =image_tag "#{review.images[0].image_url}",class:"image"
+            %ul.right-box
+              %li.subject
+                =review.subject
+              %li.text
+                =review.text
+              %li.like
+                %i.far.fa-grin-squint
+                %span.likes_count= @likes.count
+        =link_to "#" ,class:"index-link" do
+          全て表示する
+    .review-area__like
+      .review-area__like--title
+        ”いいね”した投稿一覧
+      .review-area__mine--contents
+        -@user.reviews.each do |review|
+          .content-box
+            .image
+              =image_tag "#{review.images[0].image_url}",class:"image"
+            %ul.right-box
+              %li.subject
+                =review.subject
+              %li.text
+                =review.text
+              %li.like
+                %i.far.fa-grin-squint
+                %span.likes_count= @likes.count
+        =link_to "#" ,class:"index-link" do
+          全て表示する
 
 
 

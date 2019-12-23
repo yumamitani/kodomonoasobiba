@@ -1,6 +1,7 @@
 @import "variables";
 .wrapper{
   @include wrapper;
+  background-color: $color;
   .top-area{
     display: flex;
     &__image{

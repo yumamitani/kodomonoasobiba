@@ -1,7 +1,14 @@
+$color:whitesmoke;
+$link-color:#4169e1;
+
 @mixin s-title{
-  height: 40px;
+  background-color:whitesmoke;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
   font-weight: bold;
-  font-size: 20px;
+  padding-left: 15px;
+  box-sizing: border-box;
 }
 @mixin border{
   background-color:white;
@@ -13,7 +20,6 @@
 @mixin wrapper{
   font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   color:black;
-  background-color: whitesmoke;
   width: 1200px;
   margin: 0 auto;
 }

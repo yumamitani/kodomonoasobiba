@@ -1,0 +1,113 @@
+@import "variables";
+
+.mypage-wrapper{
+  @include wrapper;
+  .title-area{
+    height: 70px;
+    width:  400px;
+    background-color: $color;
+    margin-top: 50px;
+    display: flex;
+   border-bottom: solid gray 2px;
+    &__image{
+    height: 50px;
+    width:  50px;
+    border-radius: 50px;
+    padding: 5px;
+    }
+    .title-area__nickname{
+      padding: 22px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .review-area{
+    height: 1000px;
+    width: 1200px;
+    display: flex;
+    &__mine{
+    height: 1000px;
+    width: 550px;
+    &--title{
+    width: 550px;
+    @include s-title;
+    }
+      &--contents{
+      height: 920px;
+      width: 550px;
+      background-color: $color;
+      margin-top: 30px;
+      }
+    }
+    &__like{
+      height: 1000px;
+      width: 550px;
+      margin-left: 100px;
+      &--title{
+      width: 550px;
+      @include s-title;
+      }
+      &--contents{
+      height: 920px;
+      width: 550px;
+      background-color: $color;
+      margin-top: 30px;
+      }
+    }
+    .content-box{
+      height: 100px;
+      width: 550px;
+      background-color: white;
+      border: solid 1px gray;
+      display: flex;
+      margin-bottom: 5px;
+      cursor: pointer;
+      box-sizing: border-box;
+      .image{
+        height: 100px;
+        width: 150px;
+      }
+      .right-box{
+        height: 100px;
+        width: 400px;
+        li{
+          font-size: 15px;
+        }
+        .subject{
+          height: 20px;
+          border-bottom: gray 1px solid;
+          padding-left: 2px;
+          box-sizing: border-box;
+        }
+        .text{
+          height: 60px;
+          border-bottom: gray 1px solid;
+          padding:2px;
+          box-sizing: border-box;
+        }
+        .like{
+          height: 20px;
+          
+          padding-left: 2px;
+          box-sizing: border-box;
+          i{
+            color: crimson;
+          }
+        }
+      }
+    }
+    .content-box:hover{
+      border: solid 2px $link-color;
+      box-sizing: border-box;
+    }
+    .index-link{
+      padding: 20px 0 0 400px;
+      display: block;
+      color: black;
+      font-weight: bold;
+    }
+    .index-link:hover{
+      color: $link-color;
+    }
+  }
+}
