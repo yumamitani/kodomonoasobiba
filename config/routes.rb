@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get "reviews/index"=> 'reviews#index'
   get 'about'=> 'reviews#about'
   get 'reviews/new'  =>  'reviews#new' 
-  get 'saitama' => 'reviews#saitama'
   get 'reviews/:id'=> 'reviews#show'
   get 'reviews/:id/edit'=> 'reviews#edit'
   post 'reviews'=> 'reviews#create'

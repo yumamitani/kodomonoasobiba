@@ -57,7 +57,12 @@
               2019/1/1
           .comment-box__bottom
             とても参考になりました！今度家族で行ってみようと思います！とても参考になりました！今度家族で行ってみようと思いますとても参考になりました！今度家族で行ってみようと思いますとても参考になりました！今度家族で行ってみようと思います
-
+  -if @user.id == @current_user.id
+    .btn-area
+      =link_to "/reviews/#{@review.id}/destroy", method: :post, class:"btn-area__destroy" do
+        投稿を削除する
+      .btn-area__modify
+        投稿を修正する
 
 
 
