@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id]= @user.id
       flash[:notice]= "ユーザー登録に成功しました"
-      redirect_to("/users/#{@user.id}/show")
+      redirect_to("/users/#{@user.id}/")
     else
       render("users/new")
     end

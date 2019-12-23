@@ -31,6 +31,15 @@
           %th
             =link_to "#" do
               =@review.movie
+  .like-area
+    - if Like.find_by(user_id: @current_user.id, review_id: @review.id)
+      = link_to "/likes/#{@review.id}/destroy",method: :post do
+        %i.far.fa-grin-squint.like_btn_already
+        %span.likes_count= @likes_count
+    - else
+      = link_to "/likes/#{@review.id}/create",method: :post do
+        %i.far.fa-grin-squint.like_btn
+        %span.likes_count= @likes_count
   .bottom-area
     .text-area
       .text-area__title
