@@ -1,17 +1,34 @@
-.contents.row
-  = form_tag("/users/create") do
-    %div>
-    error_message&gt;
-    - @user.errors.full_messages.each do |message|
-      = message
-  %p &#x30CB;&#x30C3;&#x30AF;&#x30CD;&#x30FC;&#x30E0;&#xFF1A;
-  %input{:name => "nickname", :value => ""}/
-  = @user.nickname
-  "&gt;
-  %p &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#xFF1A;
-  %input{:name => "password", :value => ""}/
-  = @user.password
-  "&gt;
-  %div
-    %input{:type => "submit"}>/
-    , value="&#x767B;&#x9332;"&gt;
+=form_for @user do |f|
+  .usernew-wrapper
+    .modal-area
+      .modal-area__title
+        ユーザー登録
+      .modal-area__form
+        .modal-area__form--nickname
+          .title
+            =": ニックネーム"
+          = f.text_field :nickname, class: "input-area"
+        .modal-area__form--password
+          .title
+            =": パスワード"
+          = f.text_field :password, class: "input-area"
+        =f.submit "登録",class:"modal-area__submit"
+
+
+-# .contents.row
+-#   = form_tag("/users/create") do
+-#     %div>
+-#     error_message&gt;
+-#     - @user.errors.full_messages.each do |message|
+-#       = message
+-#   %p &#x30CB;&#x30C3;&#x30AF;&#x30CD;&#x30FC;&#x30E0;&#xFF1A;
+-#   %input{:name => "nickname", :value => ""}/
+-#   = @user.nickname
+-#   "&gt;
+-#   %p &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#xFF1A;
+-#   %input{:name => "password", :value => ""}/
+-#   = @user.password
+-#   "&gt;
+-#   %div
+-#     %input{:type => "submit"}>/
+-#     , value="&#x767B;&#x9332;"&gt;

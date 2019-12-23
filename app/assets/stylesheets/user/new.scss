@@ -1,0 +1,59 @@
+@import "variables";
+
+.usernew-wrapper{
+  @include wrapper;
+    .modal-area{
+      height: 500px;
+      width: 700px;
+      margin: 50px auto 0 auto;
+      &__title{
+      @include s-title;
+      text-align: center;
+      width: 700px;
+      background-color:$color;
+      }
+      &__form{
+        height: 330px;
+        width: 700px;
+        margin-top: 20px;
+        background-color:$color;
+        .modal-area__form--nickname{
+          height: 150px;
+          width: 500px;
+          margin: 0 auto;
+          padding-top:15px ;
+        }
+          .title{
+            margin-left:50px ;
+            font-weight: bold;
+          }
+          .input-area{
+            width: 400px;
+            font-weight: bold;
+          }
+        .modal-area__form--password{
+          height: 150px;
+          width: 500px;
+          margin: 0 auto;
+        }
+      }
+      &__submit{
+        height: 50px;
+        width: 700px;
+        margin: 30px auto 0 auto;
+        background-color:crimson;
+        border-radius: 10px;
+        color:white;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        .submit-area{
+          height: 50px;
+          width: 700px;
+          display: none;
+        }
+      }
+  }
+}

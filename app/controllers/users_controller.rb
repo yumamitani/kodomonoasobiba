@@ -17,10 +17,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user= User.new
-    @user.nickname = params[:nickname]
-    @user.password =params[:password]
-    @user.image_name= "default.jpg"
+    @user= User.new(users_params)
     if @user.save
       session[:user_id]= @user.id
       flash[:notice]= "ユーザー登録に成功しました"
@@ -82,4 +79,9 @@ class UsersController < ApplicationController
       redirect_to("/reviews/index")
     end
   end
+  private
+  def users_params
+    params.require(:user).permit(:nickname, :password, :image_name)
+  end
+
 end
