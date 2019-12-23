@@ -50,8 +50,12 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review= Review.find_by(id: params[:id])
-    @review.destroy
+   if @review.destroy
     redirect_to("/")
+    flash[:notice]= "投稿を削除しました"
+   else
+    render("reviews/#{@review.id}")
+   end
   end
 
   def show
