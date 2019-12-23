@@ -6,7 +6,7 @@
     .header__bar--menu
       - if session[:user_id]
         = image_tag "/user_images/#{@current_user.image_name}", class:"user-image"
-        = link_to"#{@current_user.nickname}", "/users/#{@current_user.id}/show", class:"link", id: "user-name"
+        = link_to"#{@current_user.nickname}", "/users/#{@current_user.id}", class:"link", id: "user-name"
         = link_to "投稿する" , "/reviews/new", class:"link"
         = link_to "USERS" , "/users/index",  class:"link"
         = link_to "LOGOUT" , "/logout", method: :post,  class:"link"
