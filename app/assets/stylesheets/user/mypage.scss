@@ -96,6 +96,10 @@
         }
       }
     }
+    .content-box:hover{
+      border: solid 2px $link-color;
+      box-sizing: border-box;
+    }
     .index-link{
       padding: 20px 0 0 400px;
       display: block;
