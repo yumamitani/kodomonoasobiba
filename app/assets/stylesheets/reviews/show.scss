@@ -54,6 +54,26 @@
       }
     }
   }
+  .like-area{
+    border: solid 3px black;
+    width:100px ;
+    margin-left:600px;
+    text-align: center;
+    border-radius: 40px;
+    .like_btn_already{
+      color: crimson;
+      font-size: 30px;
+    }
+    .like_btn{
+      font-size: 30px;
+      color: gray;
+    }
+    span{
+      font-size: 30px;
+      margin-left: 10px;
+      color:black;
+    }
+  }
   .bottom-area{
     display: flex;
     .text-area{
