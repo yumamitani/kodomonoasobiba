@@ -1,9 +1,11 @@
 .mypage-wrapper
   .title-area
     .title-area__image
-      =image_tag "/user_images/#{@user.image_name}",class:"title-area__image"
+      =image_tag "#{@user.image_name}",class:"title-area__image"
     .title-area__nickname
       =@user.nickname
+  =link_to "/users/#{@current_user.id}/edit" ,class:"edit-btn" do
+    ユーザー情報を編集する
   .review-area
     .review-area__mine
       .review-area__mine--title

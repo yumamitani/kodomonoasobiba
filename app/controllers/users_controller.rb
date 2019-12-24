@@ -46,23 +46,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find_by(id: params[:id])
-    @user.nickname = params[:nickname]
-    @user.password =params[:password]
-      if params[:image]
-        @user.image_name = "#{@user.id}.jpg"
-        image= params[:image]
-        File.binwrite("public/user_images/#{@user.image_name}", image.read)
-      end
-    if @user.save
+    @user = User.find(params[:id])
+    if @user.update(users_params)
       flash[:notice]= "ユーザー情報の編集に成功しました"
-      redirect_to("/users/#{@user.id}/show")
+      redirect_to("/users/#{@user.id}")
     else
-      render("users/edit")
+      render("users/#{@user.id}/edit")
     end
   end
 
@@ -97,6 +90,7 @@ class UsersController < ApplicationController
       redirect_to("/reviews/index")
     end
   end
+
   private
   def users_params
     params.require(:user).permit(:nickname, :password, :image_name)

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'users/:id/favorite'=> 'users#favorite'
   post "users"=> "users#create"
   get "users/:id/edit" =>"users#edit"
-  post "users/:id/update"=>"users#update"
+  patch "users/:id/update"=>"users#update"
   get "login"=> "users#login_form"
   post "login" => "users#login"
   post "logout"=> "users#logout"
