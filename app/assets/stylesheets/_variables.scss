@@ -23,3 +23,9 @@ $link-color:#4169e1;
   width: 1200px;
   margin: 0 auto;
 }
+
+@mixin normal-area{
+  height: 150px;
+  width: 600px;
+  margin:10px auto 0 auto;
+}

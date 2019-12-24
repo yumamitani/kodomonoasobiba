@@ -1,110 +1,118 @@
 @import "variables";
-@mixin normal-area{
-  background-color:white;
-  height: 150px;
-  width: 1170px;
-  margin:10px auto 0 auto;
-}
-.area-title{
-  @include s-title;
-  margin:20px 0 0 40px;
-  position: relative;
-  top: 15px;
-}
-.input-area{
-  width: 1000px;
-  height: 40px;
-  border: solid 2px gray;
-  border-radius: 10px 10px 10px 10px;
-  margin:20px 0 0 40px ;
-}
-.product-new-wrapper{
-  font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  color:black;
-  background-color: whitesmoke;
-  width: 1200px;
-  margin: 0 auto;
-  height: 1800px;
-  .title_area{
-    background-color:white;
+
+  .area-title{
+    @include s-title;
+    margin:20px 0 0 40px;
     position: relative;
     top: 15px;
-    height: 50px;
-    width: 1170px;
-    margin:0 auto 40px auto;
-    font-size: 30px;
-    text-align: center;
-    line-height: 60px;
-    font-weight: bold;
-
   }
-  .subject_area{
-   @include normal-area;
-  }
-  .prefecture_area{
-    @include normal-area;
-  }
-  .address_area{
-    @include normal-area;
-  }
-  .url_area{
-    @include normal-area;
-  }
-  .bottom-area{
-    display: flex;
-    .text_area{
-      background-color:white;
-      height: 800px;
-      width: 600px;
-      margin: 15px 15px 15px 15px;
-      .input-big{
-        height: 700px;
-        width: 500px;
-        border: solid 2px gray;
-        border-radius: 10px 10px 10px 10px;
-        margin:20px 0 0 40px ;
-      }
-    }
-    .image_area{
-      background-color:white;
-      height: 800px;
-      width: 600px;
-      margin: 15px 15px 15px 15px;
-
-      &__contents{
-        height: 700px;
-        width: 500px;
-        margin:20px 0 0 40px ;
-        background-color:white;
-        border: solid 2px gray;
-        &--box{
-        height: 140px;
-        width: 210px;
-        border: solid 4px gray;
-        border-radius: 10px 10px 10px 10px;
-        margin:20px 0 0 20px ;
-        line-height:150px;
-        margin-left:20px;
-        display: inline-block;
-        }
-        .icon{
-          height: 140px;
-          width: 210px;
-          font-size: 60px;
-          padding:40px 0 0 75px;
-          cursor: pointer;
-        }
-      }
-    } 
-  }
-  .submit-area{
-    border:solid 3px black;
-    display: block;
-    height: 70px;
+  .input-area{
     width: 500px;
-    margin: 50px auto 0 auto;
-    font-size: 30px;
-    cursor: pointer;
-    border-radius: 5px 5px 5px 5px;
+    height: 40px;
+    border: solid 2px gray;
+    border-radius: 10px 10px 10px 10px;
+    margin:20px 0 0 40px ;
   }
-}
+  .product-new-wrapper{
+    font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    color:black;
+    background-color: whitesmoke;
+    width: 800px;
+    margin: 0 auto;
+    .title_area{
+      background-color:whitesmoke;
+      height: 60px;
+      font-size: 22px;
+      line-height: 50px;
+      font-weight: bold;
+      padding-left: 15px;
+      box-sizing: border-box;
+      text-align: center;
+      margin-top: 30px;
+      border-bottom: white 15px solid;
+    }
+    .subject_area{
+    @include normal-area;
+    }
+    .prefecture_area{
+      @include normal-area;
+    }
+    .address_area{
+      @include normal-area;
+    }
+    .url_area{
+      @include normal-area;
+    }
+    .bottom-area{
+      .text_area{
+        height: 800px;
+        width: 600px;
+        margin:0 auto;
+        .input-big{
+          height: 700px;
+          width: 500px;
+          border: solid 2px gray;
+          border-radius: 10px 10px 10px 10px;
+          margin:20px 0 0 40px ;
+        }
+      }
+      .image_area{
+        height: 600px;
+        width: 600px;
+        margin: 0 auto;
+        &__contents{
+          height: 600px;
+          width: 500px;
+          margin:20px 0 0 40px ;
+          &--box{
+          height: 400px;
+          width: 500px;
+          border: solid 2px gray;
+          border-radius: 10px 10px 10px 10px;
+          line-height:150px;
+          display: inline-block;
+          z-index: 1;
+          }
+          .image{
+          height: 400px;
+          width: 500px;
+          border-radius: 5px 5px 5px 5px;
+          object-fit: cover;
+          
+          cursor: pointer;
+          }
+          .hidden{
+            display :none;
+          }
+          .icon{
+            height: 140px;
+            width: 210px;
+            font-size: 200px;
+            padding:100px 0 0 140px;
+            cursor: pointer;
+          }
+          .post-image{
+            z-index: 0;
+            cursor: pointer;
+            height: 140px;
+            width: 210px;
+          }
+        }
+      } 
+    }
+    .submit-area{
+      border:solid 3px grey;
+      display: block;
+      height: 70px;
+      width: 500px;
+      margin: 0 auto 50px auto;
+      font-size: 25px;
+      cursor: pointer;
+      border-radius: 5px 5px 5px 5px;
+      background-color: crimson;
+      color: white;
+      font-weight: bold;
+
+    }
+  }
+
