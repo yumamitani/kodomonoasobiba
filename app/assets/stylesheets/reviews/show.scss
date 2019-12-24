@@ -145,6 +145,10 @@
       line-height: 52px;
       font-weight: bold;
       border: solid 2px gray;
+      color:black;
+    }
+    .btn-area__destroy:hover{
+      color:$link-color;
     }
     .btn-area__modify{
       height: 50px;
@@ -154,45 +158,10 @@
       line-height: 52px;
       font-weight: bold;
       border: solid 2px gray;
+      color:black;
+    }
+    .btn-area__modify:hover{
+      color:$link-color;
     }
   }
 }
-
-
-
-
-
-
-
-// .post_image{
-//   height: 300px;
-//   width: 500px;
-//   background-size: cover;
-// }
-
-// .flash_message{
-//   background-color: orange;
-// }
-
-// .like_btn_already{
-//   color: crimson;
-//   font-size: 50px;
-// }
-
-// .like_btn{
-//   color:grey;
-//   font-size: 50px;
-// }
-
-// .likes_count{
-//   font-size: 30px;
-// }
-
-// .user_review_index{
-// padding-top: 30px ;
-// }
-
-// .user_likes_index{
-//   padding-top: 30px ;
-//   padding-bottom: 40px;
-// }

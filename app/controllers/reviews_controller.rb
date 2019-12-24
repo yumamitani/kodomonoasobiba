@@ -31,20 +31,17 @@ class ReviewsController < ApplicationController
 
   def edit
      @review = Review.find_by(id: params[:id])
+     @prefectures= Prefecture.all
   end
 
   def update
-    @review= Review.find_by(id: params[:id])
-    @review.prefecture= params[:prefecture]
-    @review.subject= params[:subject]
-    @review.text= params[:text]
-    @review.image= params[:image]
-    @review.movie= params[:movie]
-   if @review.save
-    redirect_to("/show/#{@review.id}")
+    @review= Review.find(params[:id])
+    @prefectures= Prefecture.all
+   if @review.update(reviews_params)
+    redirect_to("/reviews/#{@review.id}")
     flash[:notice]="編集に成功しました"
    else 
-    render("reviews/edit")
+    render("reviews/#{@review.id}/edit")
    end
   end
 

@@ -70,7 +70,7 @@
     .btn-area
       =link_to "/reviews/#{@review.id}/destroy", method: :post, class:"btn-area__destroy" do
         投稿を削除する
-      .btn-area__modify
+      =link_to "/reviews/#{@review.id}/edit", class:"btn-area__modify" do
         投稿を修正する
 
 

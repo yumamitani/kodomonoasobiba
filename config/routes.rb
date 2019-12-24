@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'reviews/:id'=> 'reviews#show'
   get 'reviews/:id/edit'=> 'reviews#edit'
   post 'reviews'=> 'reviews#create'
-  post 'reviews/:id/update'=> 'reviews#update'
+  patch 'reviews/:id/update'=> 'reviews#update'
   post 'reviews/:id/destroy'=> 'reviews#destroy'
 
   get "users/index"=>"users#index"
