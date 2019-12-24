@@ -1,19 +1,49 @@
-.contents.row
-  = form_tag("/users/#{@user.id}/update", {multipart:true}) do
-    %div>
-    error_message&gt;
-    - @user.errors.full_messages.each do |message|
-      = message
-  %p &#x30CB;&#x30C3;&#x30AF;&#x30CD;&#x30FC;&#x30E0;&#xFF1A;
-  %input{:name => "nickname", :value => ""}/
-  = @user.nickname
-  "&gt;
-  %p &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#xFF1A;
-  %input{:name => "password", :value => ""}/
-  = @user.password
-  "&gt;
-  %p &#x30D7;&#x30ED;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x753B;&#x50CF;&#xFF1A;
-  %input{:name => "image", :type => "file"}
-    %div
-      %input{:type => "submit"}>/
-      , value="&#x7DE8;&#x96C6;"&gt;
+=form_for(@user, url: {controller: 'users', action: 'update' }) do |f|
+  .usernew-wrapper
+    .modal-area
+      .modal-area__title
+        ユーザー登録
+      .modal-area__form
+        .modal-area__form--nickname
+          .title
+            =": ニックネーム"
+          = f.text_field :nickname, class: "input-area"
+        .modal-area__form--password
+          .title
+            =": パスワード"
+          = f.text_field :password, class: "input-area"
+        .modal-area__form--image
+          .title
+            =": イメージ画像"
+          %label.input-small    
+            =fa_icon "picture-o" ,class:"icon"  
+            =f.file_field :image_name, style: "display: none;"
+
+        =f.submit "登録",class:"modal-area__submit"
+
+
+
+
+
+
+
+
+-# .contents.row
+-#   = form_tag("/users/#{@user.id}/update", {multipart:true}) do
+-#     %div>
+-#     error_message&gt;
+-#     - @user.errors.full_messages.each do |message|
+-#       = message
+-#   %p &#x30CB;&#x30C3;&#x30AF;&#x30CD;&#x30FC;&#x30E0;&#xFF1A;
+-#   %input{:name => "nickname", :value => ""}/
+-#   = @user.nickname
+-#   "&gt;
+-#   %p &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#xFF1A;
+-#   %input{:name => "password", :value => ""}/
+-#   = @user.password
+-#   "&gt;
+-#   %p &#x30D7;&#x30ED;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x753B;&#x50CF;&#xFF1A;
+-#   %input{:name => "image", :type => "file"}
+-#     %div
+-#       %input{:type => "submit"}>/
+-#       , value="&#x7DE8;&#x96C6;"&gt;

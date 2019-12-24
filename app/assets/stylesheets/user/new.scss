@@ -13,7 +13,7 @@
       background-color:$color;
       }
       &__form{
-        height: 330px;
+        height: 470px;
         width: 700px;
         margin-top: 20px;
         background-color:$color;
@@ -36,6 +36,19 @@
           width: 500px;
           margin: 0 auto;
         }
+        .modal-area__form--image{
+          height: 150px;
+          width: 500px;
+          margin: 0 auto;
+          .icon{
+            height: 140px;
+            width: 210px;
+            font-size: 80px;
+            padding:20px 0 0 55px;
+            cursor: pointer;
+          }
+        }
+
       }
       &__submit{
         height: 50px;
