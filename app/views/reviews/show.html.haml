@@ -3,10 +3,9 @@
     .top-area__image{:style => "background-image: url(#{@review.images[0].image_url});"}
     .top-area__detail
       .top-area__detail--map
-        .address
+        .address{id:'address'}
           =@review.address
-        .google-map
-          所在地表示　googlemapを使いたい
+        .google-map{id:'map'}
       %table.top-area__detail--imfomation
         %tr
           %th
@@ -74,6 +73,36 @@
         投稿を修正する
 
 
+:javascript
+  let map
+  let geocoder
+  
+  function initMap(){
+  
+    geocoder = new google.maps.Geocoder()
+  
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 15
+    });
+    let inputAddress = $('.address').text();
+  
+    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+      if (status == 'OK') {
+        map.setCenter(results[0].geometry.location);
+
+  let marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+  
+  
+%script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLEMAP_KEY"]}&callback=initMap"}
 
 
 

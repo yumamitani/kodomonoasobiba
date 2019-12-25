@@ -72,4 +72,5 @@ gem 'font-awesome-sass'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'jquery-rails'
-
+gem 'gmaps4rails'
+gem 'dotenv-rails'
