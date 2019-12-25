@@ -10,12 +10,14 @@
 
     .prefecture_area
       .area-title
-        =": 都道府県"
+        =": 遊び場の住所"
+      .small-title
+        ="(都道府県)"
       = f.collection_select :prefecture_id, @prefectures, :id, :name, {},{class: "input-area"}
 
     .address_area
-      .area-title
-        =": 遊び場の住所"
+      .small-title
+        ="(市区町村以降の住所を記入してください)"
       = f.text_field :address, class: "input-area"
     .url_area
       .area-title

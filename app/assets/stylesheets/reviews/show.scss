@@ -29,12 +29,15 @@
         box-sizing: border-box;
         }
         .google-map{
-          background-color: silver;
           width: 440px;
           height: 330px;
           margin-top: 10px;
           border: solid 1px black;
           box-sizing: border-box;
+        }
+        #map{
+          height: 330px;
+          width: 440px;
         }
       }
       &--imfomation{
