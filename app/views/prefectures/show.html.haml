@@ -16,7 +16,7 @@
                 =review.subject
               .contents-box__subject--like
                 %i.far.fa-grin-squint
-                %span.likes_count= @first_review.likes.count
+                %span.likes_count= review.likes.count
             .contents-box__text
               =review.text
     =link_to "/reviews/index", class:"prefecture-index-link" do

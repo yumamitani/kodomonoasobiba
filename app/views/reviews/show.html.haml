@@ -3,9 +3,9 @@
     .top-area__image{:style => "background-image: url(#{@review.images[0].image_url});"}
     .top-area__detail
       .top-area__detail--map
-        .address{id:'address'}
-          =@review.address
         .google-map{id:'map'}
+        .address{id:'address'}
+          ="#{@prefecture.name}#{@review.address}"
       %table.top-area__detail--imfomation
         %tr
           %th
