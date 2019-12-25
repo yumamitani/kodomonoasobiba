@@ -1,5 +1,5 @@
 =form_for(@user, url: {controller: 'users', action: 'update' }) do |f|
-  .usernew-wrapper
+  .useredit-wrapper
     .modal-area
       .modal-area__title
         ユーザー登録
@@ -15,9 +15,10 @@
         .modal-area__form--image
           .title
             =": イメージ画像"
-          %label.input-small    
+          %label.input-small 
+            =image_tag "" ,class:"avatar hidden"  
             =fa_icon "picture-o" ,class:"icon"  
-            =f.file_field :image_name, style: "display: none;"
+            =f.file_field :image_name, style: "display: none;",class:"file-field"
 
         =f.submit "登録",class:"modal-area__submit"
 

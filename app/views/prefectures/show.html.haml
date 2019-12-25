@@ -15,8 +15,8 @@
               .contents-box__subject--title
                 =review.subject
               .contents-box__subject--like
-                %i.far.fa-grin-squint 
-                  =likes_count
+                %i.far.fa-grin-squint
+                %span.likes_count= @first_review.likes.count
             .contents-box__text
               =review.text
     =link_to "/reviews/index", class:"prefecture-index-link" do
@@ -31,7 +31,7 @@
         =fa_icon "star", class:"icon1"
         第１位
       -if @first_review
-        .contents-box
+        =link_to "/reviews/#{@first_review.id}", class:"contents-box" do
           .contents-box__image
             =image_tag "#{@first_review.images[0].image_url}",class:"contents-box__image"
           .contents-box__right
@@ -49,7 +49,7 @@
         =fa_icon "star", class:"icon2"
         第２位
       -if @second_review
-        .contents-box
+        =link_to "/reviews/#{@second_review.id}", class:"contents-box" do
           .contents-box__image
             =image_tag "#{@second_review.images[0].image_url}",class:"contents-box__image"
           .contents-box__right
@@ -67,7 +67,7 @@
         =fa_icon "star", class:"icon3"
         第３位
       -if @third_review
-        .contents-box
+        =link_to "/reviews/#{@third_review.id}", class:"contents-box" do
           .contents-box__image
             =image_tag "#{@third_review.images[0].image_url}",class:"contents-box__image"
           .contents-box__right

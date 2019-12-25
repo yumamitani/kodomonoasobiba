@@ -5,7 +5,8 @@ class PrefecturesController < ApplicationController
     @prefecture= Prefecture.find(params[:id])
 
     prefecture_reviews= Review.where(prefecture_id: params[:id])
-    ranking_ids= Like.group(:review_id).order("count(review_id) DESC").limit(3).pluck(:review_id)
+    prefecture_likes= Like.joins(:review).where(reviews: {prefecture_id: params[:id]})
+    ranking_ids= prefecture_likes.group(:review_id).order("count(review_id) DESC").limit(3).pluck(:review_id)
 
     first_id= ranking_ids[0]
     second_id= ranking_ids[1]

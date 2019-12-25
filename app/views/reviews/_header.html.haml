@@ -5,7 +5,10 @@
         =image_tag "headerlogo",class:"headerlogo"
     .header__bar--menu
       - if session[:user_id]
-        = image_tag "#{@current_user.image_name}", class:"user-image"
+        -if @current_user.image_name?
+          = image_tag "#{@current_user.image_name}", class:"user-image"
+        -else
+          = image_tag "noimage.png", class:"user-image"
         = link_to"#{@current_user.nickname}", "/users/#{@current_user.id}", class:"link", id: "user-name"
         = link_to "投稿する" , "/reviews/new", class:"link"
         = link_to "ログアウト" , "/logout", method: :post,  class:"link"

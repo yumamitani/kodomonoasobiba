@@ -1,7 +1,10 @@
 .mypage-wrapper
   .title-area
     .title-area__image
-      =image_tag "#{@user.image_name}",class:"title-area__image"
+      -if @current_user.image_name?
+        =image_tag "#{@user.image_name}",class:"title-area__image"
+      -else
+        = image_tag "noimage.png", class:"title-area__image"
     .title-area__nickname
       =@user.nickname
   =link_to "/users/#{@current_user.id}/edit" ,class:"edit-btn" do
