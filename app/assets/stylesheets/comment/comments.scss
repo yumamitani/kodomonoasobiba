@@ -1,0 +1,110 @@
+@import "variables";
+.comment-wrapper{
+  font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color:black;
+  width: 1000px;
+  margin: 0 auto;
+  .comment-title{
+    height: 50px;
+    background-color: $color;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: bold;
+  }
+  .comment-contents{
+    width: 1000px;
+    background-color:$color;
+    margin-top: 30px;
+    position: relative;
+    .contents-area{
+      margin: 20px 20px 20px 20px;
+      width: 960px;
+      padding: 30px 0 40px 0;
+      .comment{
+        width: 960px;
+        position: relative;
+        #mine{
+          background-color: yellowgreen;
+          margin-left: 460px;
+        }
+        .comment-box{
+          background-color:white;
+          width: 500px;
+          margin-bottom:10px;
+          font-size: 15px;
+          border-radius: 15px 15px 15px 15px;
+          .comment-box__top{
+            display: flex;
+            .comment-username{
+             margin-left: 10px;
+             font-size: 12px;
+             font-weight: bold;
+             line-height: 25px;
+            }
+            .daytime{
+              margin-left: 15px;
+              line-height: 24px;
+            }
+          }
+          .comment-box__bottom{
+            padding: 0;
+            margin-left: 10px;
+          }
+        }
+      }   
+      
+    }
+  }
+  
+  .index-link{
+    padding: 20px 0 0 400px;
+    display: block;
+    color: black;
+    font-weight: bold;
+  }
+  .index-link:hover{
+    color: $link-color;
+  }
+  .post-area{
+    height: 200px;
+    width: 1000px;
+    margin: 30px 0 50px 0;
+    position: relative;
+    .text-area{
+    padding: 20px;
+    }
+    .submit-area{
+      height: 30px;
+      width: 100px;
+      background-color:white;
+      padding:5px 10px 5px 10px;
+      border: solid 2px black;
+      font-weight: bold;
+      line-height: 15px;
+      position: absolute;
+      bottom:70px;
+      margin-left: 20px;
+      display: inline-block;
+    }
+    .submit-area:hover{
+      color: $link-color;
+      border: solid 2px $link-color;
+      cursor: pointer;
+    }
+    .mypage-link{
+      position: absolute;
+      right: 50px;
+      bottom: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      .mypage-link__btn{
+        color: black;
+      }
+      .mypage-link__btn:hover{
+        color: $link-color;
+      }
+    }
+  }
+}

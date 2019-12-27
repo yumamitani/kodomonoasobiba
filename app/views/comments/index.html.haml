@@ -1,0 +1,35 @@
+.comment-wrapper
+  .comment-title
+    コメント一覧
+  .comment-contents
+    .contents-area
+      -@comments.each do |comment|
+        .comment
+          -if comment.user.id == @review.user.id
+            .comment-box{id: "mine"}
+              .comment-box__top
+                .comment-username
+                  =comment.user.nickname
+                .daytime
+                  =comment.created_at.to_s(:datetime_jp)
+              .comment-box__bottom
+                =comment.message
+          -else
+            .comment-box
+              .comment-box__top
+                .comment-username
+                  =comment.user.nickname
+                .daytime
+                  =comment.created_at.to_s(:datetime_jp)
+              .comment-box__bottom
+                =comment.message
+
+  .post-area
+    =form_for(@comment, url: {controller: 'comments', action: 'create' }) do |f|
+      =f.text_area :message, size: "70x7",class: "text_area"
+      = f.hidden_field :review_id, :value => "#{@review.id}"
+      =f.submit "投稿",class:"submit-area"
+    .mypage-link
+      =link_to "/reviews/#{@review.id}",class:"mypage-link__btn" do
+        投稿詳細ページに戻る
+      
