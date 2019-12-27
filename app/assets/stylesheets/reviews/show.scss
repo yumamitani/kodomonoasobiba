@@ -99,8 +99,9 @@
     .comment-area{
       width: 585px;
       margin: 15px 15px 0 15px ;
+      position: relative;
       &__title{
-        width: 585px;
+        width: 500px;
         @include s-title;
       }
       &__main{
@@ -132,6 +133,20 @@
           }
         }
       }
+      .comment-link{
+        margin: 30px 0 20px 200px;
+        color: black;
+        font-weight: bold;
+        width: 300px;
+        border: solid 2px black;
+        padding: 5px 15px 5px 15px;
+        text-align: center;
+        display: block;
+      }
+      .comment-link:hover{
+        color: $link-color;
+        border: solid 2px $link-color;
+      }
     }
   }
   .btn-area{
@@ -152,6 +167,7 @@
     }
     .btn-area__destroy:hover{
       color:$link-color;
+      border: solid 2px $link-color;
     }
     .btn-area__modify{
       height: 50px;
@@ -165,6 +181,7 @@
     }
     .btn-area__modify:hover{
       color:$link-color;
+      border: solid 2px $link-color;
     }
   }
 }

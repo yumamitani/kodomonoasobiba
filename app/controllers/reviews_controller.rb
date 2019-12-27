@@ -60,6 +60,7 @@ class ReviewsController < ApplicationController
     @user = User.find(@review.user_id)
     @prefecture = Prefecture.find(@review.prefecture_id)
     @likes_count = Like.where(review_id: @review.id).count
+    @comments= @review.comments.where.not(user_id: @review.user.id).order("created_at asc").limit(3)
   end
 
   private

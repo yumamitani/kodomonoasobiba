@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'reviews'=> 'reviews#create'
   patch 'reviews/:id/update'=> 'reviews#update'
   post 'reviews/:id/destroy'=> 'reviews#destroy'
+  get "reviews/:id/comment" => "comments#index"
 
   get "users/index"=>"users#index"
   get "users/new" => "users#new"
@@ -24,5 +25,7 @@ Rails.application.routes.draw do
 
   post "likes/:review_id/create"=> "likes#create"
   post "likes/:review_id/destroy"=> "likes#destroy"
+
+  post "comments" => "comments#create"
 
 end

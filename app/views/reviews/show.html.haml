@@ -49,22 +49,18 @@
       .comment-area__title
         コメント欄
       .comment-area__main
-        .comment-box
-          .comment-box__top
-            .comment-username
-              おでかけさん
-            .daytime
-              2019/1/1
-          .comment-box__bottom
-            とても参考になりました！今度家族で行ってみようと思います！
-        .comment-box
-          .comment-box__top
-            .comment-username
-              おでかけさん
-            .daytime
-              2019/1/1
-          .comment-box__bottom
-            とても参考になりました！今度家族で行ってみようと思います！とても参考になりました！今度家族で行ってみようと思いますとても参考になりました！今度家族で行ってみようと思いますとても参考になりました！今度家族で行ってみようと思います
+        -@comments.each do |comment|
+          .comment-box
+            .comment-box__top
+              .comment-username
+                =comment.user.nickname
+              .daytime
+                =comment.created_at.to_s(:datetime_jp)
+            .comment-box__bottom
+              =comment.message
+      =link_to "/reviews/#{@review.id}/comment",class:"comment-link" do
+        コメントする / コメントの一覧を見る
+        
   -if @user.id == @current_user.id
     .btn-area
       =link_to "/reviews/#{@review.id}/destroy", method: :post, class:"btn-area__destroy" do
