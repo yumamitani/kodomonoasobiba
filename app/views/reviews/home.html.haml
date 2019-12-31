@@ -1,6 +1,113 @@
-.home
-  .main_message
-    さあ、遊びに行こう。
-  .sub_message
-    〜子供の遊び場情報共有サイト〜
+.homes-wapper
+  .banner-area
+  .about-area
+    %h1.about-area__main
+      ="ーASOBIBAとはー"
+    %h2.about-area__sub
+      子供の遊び場情を共有できるWebサイトです。
+      %h3.about-area__sub--upper
+        お気に入りの遊び場を見つけて、子供と一緒にハッピーな毎日を過ごしましょう！！
+      .about-area__sub--menu
+        %ul
+          %li
+            １ 遊び場を探す
+          %li
+            ２ お気に入りの遊び場リストを作成
+          %li
+            ３ 遊び場を投稿する
+          %li
+            ４ Youtubeやブログと連携
+  .search-area
+    .search-area__left
+      .search-area__left--box
+        =image_tag "toppage/prefecture",class:"image"
+        .script
+          ①
+          %span 都道府県で探す
+      .search-area__left--box
+        .script
+          ②
+          %span いいねランキング
+        =image_tag "toppage/like",class:"image"
+      .search-area__left--box
+        =image_tag "toppage/comment",class:"image"
+        .script
+          ③
+          %span コメント機能
+    .search-area__right
+      .search-area__right--main
+        ="ー１ 遊び場を探すー"
+      .search-area__right--message
+        『今週末はどこに遊びに連れて行こう‥。』『また先週と同じじゃ子供が飽きちゃうかな。』
+        大丈夫です、まずは遊び場を探しましょう！
+      .search-area__right--list
+        %ul
+          %li
+            ①都道府県で探す
+            .sub
+              記事は都道府県別になっています。皆さんの街の遊び場をチェックしましょう！
+          %li
+            ②いいねランキング
+            .sub
+              ”いいね”の数によって記事はランキングされます。たくさんの”いいね”を獲得している記事をチェックしましょう！
+          %li
+            ③コメント機能
+            .sub
+              記事にコメントができます。積極的にコミュニケーションを取っていきましょう！
+  .user-area
+    .user-area__left
+      .user-area__left--main
+        ="ー2 遊び場のリストを作成ー"
+      .user-area__left--message
+        『この間の公園良かったな、どこだっけ？』なんて思い出す必要はありません。自分だけのお気に入りの遊び場リストを作成しましょう！
+      .user-area__left--introduction
+        .script
+          方法はすごく簡単。<br>良かった遊び場の記事に"いいね"するだけ。<br>マイページに”いいね”した記事が増えていきます！<br>
+          .script__sub
+            ※”いいね”は右の”いいねボタン”を押すだけ。
+    =image_tag "toppage/likebtn",class:"user-area__right"
+  .memory-area
+    .memory-area__left
+      .memory-area__left--small
+        =image_tag"toppage/small1",class:"small-image"
+        =image_tag"toppage/small2",class:"small-image"
+      =image_tag"toppage/big",class:"memory-area__left--big"
+      .memory-area__left--small
+        =image_tag"toppage/small3",class:"small-image"
+        =image_tag"toppage/small4",class:"small-image"
+    .memory-area__right
+      .memory-area__right--main
+        ="ー３ 遊び場を投稿するー"
+      .memory-area__right--middle
+        記事は閲覧するだけでなく、投稿することができます。<br>ご家族で行って楽しかった遊び場は、他の人にもシェアしましょう！
+      .memory-area__right--bottom
+        また、投稿した記事はマイページにリストアップされます。<br>子供との思い出を記録して、アルバムのようにも使えます！
+  .sns-area
+    .sns-area__left
+      .sns-area__left--main
+        ="ー4 他のメディアと連携するー"
+      .sns-area__left--message
+        もしもなたが、子供に関するYoutubeやブログをやっているなら、<br>ASOBIBAでも自分の動画やブログを紹介しましょう！
+      .sns-area__left--message
+        ASOBIBAでは、記事の中に投稿者の任意のURLを貼ることができます。ご自身の使っている他のメディアと連携してみてはいかがでしょうか？
+    .sns-area__right
+      .sns-area__right--image
+        .cooparation
+          %i.fab.fa-youtube.youtube-icon
+          %i.fas.fa-blog.blog-icon
+        .cooparation
+          %i.fas.fa-arrow-up.arrow-icon
+          %i.fas.fa-arrow-down.arrow-icon
+        .cooparation
+          .asobiba-icon
+            ASOBIBA
+      .sns-area__right--image
+
+    
+  =link_to  "投稿を見る", "/reviews/index", class: "pref_link" 
+-# .home
+-#   .main_message
+-#     さあ、遊びに行こう。
+-#   .sub_message
+-#     〜子供の遊び場情報共有サイト〜
   =link_to  "投稿を見る", "/reviews/index", class: "pref_link" 

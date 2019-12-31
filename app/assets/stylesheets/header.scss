@@ -1,42 +1,31 @@
 @import"variables";
 .header{
-  height: 70px;
+  height: 100px;
   width: 100%;
   font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  color:black;
   font-weight: bold;
-  background-color:$color;
-  .header__bar{
-    display: flex;
-    background-color:#ffffdb;
-    .header__bar--tittle{
+  background-color:$brown;
+  display: flex;
+    &__tittle{
       font-size: 40px;
       text-decoration: none;
       padding:0 30px 0 0px ;
-      color:black;
-      height: 70px;
-      line-height: 70px;
-      .header__bar--tittle:hover{
-        color: #4169e1;
-      }
       .headerlogo{
-        height: 70px;
         width: 270px;
+        color:$cream;
+        padding:30px
       }
     }
-    .header__bar--menu{
+    &__menu{
       padding:0 30px 0 500px;
       text-decoration: none;
       font-size: 16px;
-      background-color:#ffffdb;
-      height: 70px;
       line-height: 40px;
       .user-image{
         height: 45px;
         width: 45px;
         border-radius: 30px;
         margin:13px 10px 0 0 ;
-        float: left;
         display: inline-block;
       }
       #user-name{
@@ -44,15 +33,15 @@
       }
       .link{
         text-decoration: none;
-        color:black;
+        color:$cream;
         padding:17px 20px 0 0 ;  
         display: inline-block; 
       }
       .link:hover{
-        color: #4169e1;
+        color: $link-color;
       }
     }
-  }
+  
 }
 .flash_message{
 background-color: $color;

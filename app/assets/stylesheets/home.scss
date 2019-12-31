@@ -1,48 +1,311 @@
-.home{
-  background-image:url("/road.jpg");
-  background-size: cover;
-  height: 800px;
-  width: 100%;
+@import"variables";
+@mixin h1{
+  font-size: 50px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+@mixin h2{
   font-size: 30px;
-  color:black;
+  padding-top: 20px;
+}
+@mixin h3{
+  font-size: 20px;
+  padding-top: 20px;
+}
+@mixin left-image{
+  height: 480px;
+  width: 480px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+@mixin left-script{
+  height: 480px;
+  width: 680px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+@mixin right-image{
+  height: 480px;
+  width: 480px;
+  position: relative;
+  top: 10px;
+  margin-left: 30px;
+}
+@mixin right-script{
+  height: 480px;
+  width: 680px;
+  position: relative;
+  top: 10px;
+  margin-left: 30px;
+}
 
 
-  .main_message{
-    font-size: 100px;
-    color:whitesmoke;
-    padding: 100px 0 0 30px;
-    font-family: 'ヒラギノ角ゴ Std W8'
-    'Hiragino Kaku Gothic Std'
-    （Macintosh OS X）f;
-    font-weight: bold;
-    text-shadow: black 1px 1px 2px;
+
+.homes-wapper{
+@include wrapper;
+height:2000px;
+background-color: whitesmoke;
+  .banner-area{
+    height: 600px;
+    background-image:url("/road.jpg");
+    background-size: cover;
   }
-  .sub_message{
-    font-size: 30px;
-    color:whitesmoke;
-    padding: 10px 0 0 30px;
-    font-family: 'ヒラギノ角ゴ Std W8'
-    'Hiragino Kaku Gothic Std'
-    （Macintosh OS X）f;
-    font-weight: bold;
-    text-shadow: black 1px 1px 2px;
+  .about-area{
+    height: 500px;
+    background-color: $cream;
+    color: $brown;
+    h1{
+      @include h1;
+    }
+    h2{
+      @include h2;
+    }
+    h3{
+      @include h3;
+      text-align:center;
+    }
+    .about-area__sub--menu{
+      font-size: 40px;
+      padding: 20px 0 0 180px;
+    }
   }
-  .pref_link{
-    display: block;
-    height: 250px;
-    width: 250px;
-    border-radius: 150px;
-    font-size: 40px;
-    background-color:#ffffdb;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    line-height: 240px;
-    color: black;
-    font-weight: bold;
+  .search-area{
+    height: 500px;
+    background-color:$brown;
+    color: $cream;
+    display: flex;
+    .search-area__left{
+      @include left-image;
+      .search-area__left--box{
+        height: 160px;
+        display: flex;
+        .image{
+          height: 160px;
+          width: 240px;
+          border: solid 3px black;
+          box-sizing: border-box;
+        }
+        .script{
+          height: 160px;
+          width: 240px;
+          font-size: 60px;
+          span{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .search-area__right{
+      @include right-script;
+      .search-area__right--main{
+        @include h1;
+      }
+      .search-area__right--message{
+        @include h3;
+        padding:20px 20px 20px 20px;
+        box-sizing: border-box;
+      }
+      .search-area__right--list{
+        border: solid 2px $cream;
+        padding:0px 20px 20px 20px;
+        box-sizing: border-box;
+        li{
+          @include h3
+        }
+        .sub{
+          font-size: 15px;
+          padding-left: 12px;
+        }
+      }      
+    }
   }
-  .pref_link:hover{
-    color: #4169e1;
+  .user-area{
+    height: 500px;
+    display: flex;
+    background-color:$cream;
+    color: $brown;
+    .user-area__left{
+     @include left-script;
+      .user-area__left--main{
+        @include h1;
+      }
+      .user-area__left--message{
+        @include h3;
+        line-height: 3rem;
+        padding: 20px 20px 0px 20px;
+        box-sizing: border-box;
+      }
+      .user-area__left--introduction{
+        height: 305px;
+        width: 680px;
+        .script{
+          height: 305px;
+          padding: 0px 20px 20px 20px;
+          box-sizing: border-box;
+          @include h3;
+          line-height: 3rem;
+          .script__sub{
+            font-size: 16px;
+            padding:0 0 0 100px
+          }
+        }
+      }
+    }
+    .user-area__right{
+      @include right-image;
+      border: solid 2px black;
+      box-sizing: border-box;
+    }
+  }
+  .memory-area{
+    height: 500px;
+    background-color:$brown;
+    color: $cream;
+    display: flex;
+    &__left{
+      @include left-image();
+      &--small{
+        height: 120px;
+        display: flex;
+        .small-image{
+          width: 200px;
+          margin-left: 25px;
+          border: solid 2px black;
+      box-sizing: border-box;
+        }
+      }
+      &--big{
+        height: 220px;
+        width: 300px;
+        margin: 10px auto 10px auto;
+        display: block;
+        border: solid 2px black;
+      box-sizing: border-box;
+      }
+    }
+    &__right{
+      @include right-script();
+      &--main{
+        @include h1;
+      }
+      &--middle{
+        @include h3;
+        padding:60px 30px 30px 30px;
+        line-height: 3rem;
+      }
+      &--bottom{
+        @include h3;
+        padding:30px 30px 30px 30px;
+        line-height: 3rem;
+      }
+    }
+  }
+  .sns-area{
+    height: 500px;
+    background-color: $cream;
+    color: $brown;
+    display: flex;
+    &__left{
+      @include left-script();
+      &--main{
+        @include h1;
+        font-size: 48px;
+      }
+      &--message{
+        @include h3;
+        padding:30px 30px 30px 30px;
+        line-height: 3rem;
+      }
+    }
+    .sns-area__right{
+      @include right-image();
+      .sns-area__right--image{
+        margin: 20px auto 20px auto;
+        box-sizing: border-box;
+        height: 220px;
+        width: 420px;
+        .cooparation{
+          height: 73px;
+          width: 300px;
+          margin: 0 auto;
+          border-radius: 100px;
+          .youtube-icon{
+            font-size: 60px;
+            color: red;
+            padding:10px 0 0 70px;
+
+          }
+          .blog-icon{
+            font-size: 60px;
+            color:black;
+            padding-left: 30px;
+          }
+          .arrow-icon{
+            font-size: 50px;
+            padding:10px 0 0 30px;
+            margin-left: 40px;
+            color: black;
+          }
+          .asobiba-icon{
+            font-size: 40px;
+            color: $brown;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+          }
+        }
+      }
+    }
   }
 }
+
+// .home{
+//   background-image:url("/road.jpg");
+//   background-size: cover;
+//   height: 800px;
+//   width: 100%;
+//   font-size: 30px;
+//   color:black;
+
+
+//   .main_message{
+//     font-size: 100px;
+//     color:whitesmoke;
+//     padding: 100px 0 0 30px;
+//     font-family: 'ヒラギノ角ゴ Std W8'
+//     'Hiragino Kaku Gothic Std'
+//     （Macintosh OS X）f;
+//     font-weight: bold;
+//     text-shadow: black 1px 1px 2px;
+//   }
+//   .sub_message{
+//     font-size: 30px;
+//     color:whitesmoke;
+//     padding: 10px 0 0 30px;
+//     font-family: 'ヒラギノ角ゴ Std W8'
+//     'Hiragino Kaku Gothic Std'
+//     （Macintosh OS X）f;
+//     font-weight: bold;
+//     text-shadow: black 1px 1px 2px;
+//   }
+//   .pref_link{
+//     display: block;
+//     height: 250px;
+//     width: 250px;
+//     border-radius: 150px;
+//     font-size: 40px;
+//     background-color:#ffffdb;
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+//     text-align: center;
+//     line-height: 240px;
+//     color: black;
+//     font-weight: bold;
+//   }
+//   .pref_link:hover{
+//     color: #4169e1;
+//   }
+// }
