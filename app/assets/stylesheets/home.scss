@@ -226,6 +226,7 @@ background-color: whitesmoke;
         box-sizing: border-box;
         height: 220px;
         width: 420px;
+        display: block;
         .cooparation{
           height: 73px;
           width: 300px;
@@ -235,7 +236,6 @@ background-color: whitesmoke;
             font-size: 60px;
             color: red;
             padding:10px 0 0 70px;
-
           }
           .blog-icon{
             font-size: 60px;
@@ -256,7 +256,42 @@ background-color: whitesmoke;
             line-height: 50px;
           }
         }
+        .movie{
+          margin: 20px auto 20px auto;
+          box-sizing: border-box;
+          height: 220px;
+          width: 420px;
+          display: block;
+          object-fit: cover;
+        }
       }
+    }
+  }
+  .pref_link{
+    display: block;
+    height: 200px;
+    width: 200px;
+    border-radius: 150px;
+    font-size: 20px;
+    background-color:$color;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    line-height: 90px;
+    color: black;
+    font-weight: bold;
+    border: solid 5px black;
+    z-index: 0;
+    .search-icon{
+      font-size: 80px;
+      color: black;
+      z-index: 1;
+      position: fixed;
+      bottom: 5px;
+      right:5px;
+      height: 150px;
+      width: 250px;
     }
   }
 }

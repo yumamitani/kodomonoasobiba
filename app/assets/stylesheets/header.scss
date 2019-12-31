@@ -6,6 +6,9 @@
   font-weight: bold;
   background-color:$brown;
   display: flex;
+  position: fixed;
+  top:0;
+  z-index: 1;
     &__tittle{
       font-size: 40px;
       text-decoration: none;
