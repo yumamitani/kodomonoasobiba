@@ -1,0 +1,54 @@
+$touhoku-color:#0000ff;
+$kantou-color:#00ff7f;
+$tyuubu-color:#00ffff;
+$kansai-color:#ffff00;
+$tyuugoku-color:#ff7f00;
+$sikoku-color:#ff00ff;
+$kyuusyuu-color:#ff0000;
+
+$pref-difference:60px;
+
+$top1:350px;
+$top2:$top1+$pref-difference;
+$top3:$top2+$pref-difference;
+$top4:$top3+$pref-difference;
+$top5:$top4+$pref-difference;
+$top6:$top5+$pref-difference;
+$top7:$top6+$pref-difference;
+
+$right1:330px;
+$right2:$right1+$pref-difference;
+$right3:$right2+$pref-difference;
+$right4:$right3+$pref-difference;
+$right5:$right4+$pref-difference;
+$right6:$right5+$pref-difference;
+$right7:$right6+$pref-difference;
+$right8:$right7+$pref-difference;
+$right9:$right8+$pref-difference;
+$right10:$right9+$pref-difference;
+$right11:$right10+$pref-difference;
+$right12:$right11+$pref-difference;
+$right13:$right12+$pref-difference;
+$right14:$right13+$pref-difference;
+
+@mixin basic{
+  height: 50px;
+  width: 50px;
+  border-radius: 15px;
+  position: absolute;
+  border: solid 2px black;
+}
+@mixin tall{
+  height: 110px;
+  width: 50px;
+  border-radius: 15px;
+  position: absolute;
+  border: solid 2px black;
+}
+@mixin wide{
+  height: 50px;
+  width: 110px;
+  border-radius: 15px;
+  position: absolute;
+  border: solid 2px black;
+}
