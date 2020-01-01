@@ -1,397 +1,344 @@
-$touhoku-color:#0000ff;
-$kantou-color:#00ff7f;
-$tyuubu-color:#00ffff;
-$kansai-color:#ffff00;
-$tyuugoku-color:#ff7f00;
-$sikoku-color:#ff00ff;
-$kyuusyuu-color:#ff0000;
+@import "variables";
+@import "index_variables";
 
-$top1:260px;
-$top2:340px;
-$top3:420px;
-$top4:500px;
-$top5:580px;
-$top6:660px;
-$top7:740px;
+.index-wrapper{
+  @include wrapper;
+  .title{
+    height: 70px;
+    width:  400px;
+    background-color: $color;
+    margin-top: 120px;
+    display: flex;
+    border-bottom: solid gray 2px;
+    padding: 22px;
+    font-size: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+  .pref-area{
+    margin-top: 20px;
+    height: calc(100vh - 210px);
+    background-color: $color;
+    border: solid 2px gray;
+    box-sizing: border-box;
+    background-image: image-url("prefecture.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    #hokkaido{
+      height: 50px;
+      width: 110px;
+      background-color: gray;
+      border-radius: 20px;
+      position: absolute;
+      top:230px;
+      right: 330px;
+      border: solid 2px black;
+    }
+    #aomori{
+      height: 50px;
+      width: 110px;
+      background-color: $touhoku-color;
+      border-radius: 20px;
+      position: absolute;
+      top:290px;
+      right: 330px;
+      border: solid 2px black;
+    }
+    // ＝＝＝＝東北地方＝＝＝＝
+    #iwate{
+      @include basic;
+      background-color: $touhoku-color;
+      top: $top1;
+      right: $right1;
+    }
+    #akita{
+      @include basic;
+      background-color: $touhoku-color;
+      top:$top1;
+      right:$right2;
+    }
+    #miyagi{
+      @include basic;
+      background-color: $touhoku-color;
+      top:$top2;
+      right:$right1;
+    }
 
-$right1:200px;
-$right2:280px;
-$right3:360px;
-$right4:440px;
-$right5:520px;
-$right6:600px;
-$right7:680px;
-$right8:760px;
-$right9:840px;
-$right10:920px;
-$right11:1000px;
-$right12:1080px;
-$right13:1160px;
-$right14:1240px;
-
-@mixin basic{
-  height: 70px;
-  width: 70px;
-  border-radius: 15px;
-  position: absolute;
-  border: solid 2px black;
-}
-@mixin tall{
-  height: 150px;
-  width: 70px;
-  border-radius: 15px;
-  position: absolute;
-  border: solid 2px black;
-}
-@mixin wide{
-  height: 70px;
-  width: 150px;
-  border-radius: 15px;
-  position: absolute;
-  border: solid 2px black;
-}
-.pref-name{
-  height: 24px;
-  width: 60px;
-  background-color: honeydew;
-  margin: 10px auto 0 auto;
-  border-radius: 5px;
-  text-align: center;
-  font-family: sans-serif;
-}
-
-.pref-name2{
-  height: 30px;
-  width: 120px;
-  background-color: honeydew;
-  margin: 20px auto 0 auto;
-  border-radius: 5px;
-  text-align: center;
-  font-family: sans-serif;
-}
-.target-area:hover{
-  transform: scale(1.2,1.2);
-}
-.pref_area{
-  height: 100vh;
-  width: 1200px;
-  margin: 0 auto;
-  background-color: whitesmoke;
-  border: solid 2px black;
-  background-image: image-url("prefecture.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.main-message{
-  font-size: 50px;
-  font-family: sans-serif;
-  background-color: black;
-  color: aliceblue;
-  display: inline;
-  border-radius: 5px;
-  padding:0 15px 0 15px;
-}
-#hokkaido{
-  height: 85px;
-  width: 150px;
-  background-color: gray;
-  border-radius: 30px;
-  position: absolute;
-  top:100px;
-  right: 200px;
-  border: solid 2px black;
-}
-#aomori{
-  height: 50px;
-  width: 150px;
-  background-color: $touhoku-color;
-  border-radius: 20px;
-  position: absolute;
-  top:200px;
-  right: 200px;
-  border: solid 2px black;
-}
-// ＝＝＝＝東北地方＝＝＝＝
-#iwate{
-  @include basic;
-  background-color: $touhoku-color;
-  top: $top1;
-  right: $right1;
-}
-#akita{
-  @include basic;
-  background-color: $touhoku-color;
-  top:$top1;
-  right:$right2;
-}
-#miyagi{
-  @include basic;
-  background-color: $touhoku-color;
-  top:$top2;
-  right:$right1;
-}
-
-#yamagata{
-  @include basic;
-  background-color: $touhoku-color;
-  top:$top2;
-  right:$right2;
-}
-#fukushima{
-  @include basic;
-  background-color: $touhoku-color;
-  top:$top3;
-  right:$right1;
-}
-// ＝＝＝＝関東地方＝＝＝＝＝＝＝＝＝＝＝
-#ibaraki{
-  @include basic;
-  top:$top4;
-  right:$right1;
-  background-color:$kantou-color ;
-}
-#tochigi{
-  @include basic;
-  top:$top4;
-  right:$right2;
-  background-color:$kantou-color ;
-}
-#gunma{
-  @include basic;
-  top:$top4;
-  right:$right3;
-  background-color:$kantou-color ;
-}
-#saitama{
-  @include basic;
-  top:$top5;
-  right:$right2;
-  background-color:$kantou-color ;
-}
-#chiba{
-  @include basic;
-  top:$top5;
-  right:$right1;
-  background-color:$kantou-color ;
-}
-#tokyo{
-  @include basic;
-  top:$top6;
-  right:$right2;
-  background-color:$kantou-color ;
-}
-#kanagawa{
-  @include basic;
-  top:$top6;
-  right:$right3;
-  background-color:$kantou-color ;
-  font-size: 14px;
-  line-height: 25px;
-}
-// ＝＝＝＝中部地方＝＝＝＝＝＝＝
-#niigata{
-  @include wide;
-  top:$top3;
-  right:$right2;
-  background-color:$tyuubu-color ;
-}
-#toyama{
-  @include basic;
-  top:$top3;
-  right:$right4;
-  background-color:$tyuubu-color ;
-}
-#ishikawa{
-  @include basic;
-  top:$top3;
-  right:$right5;
-  background-color:$tyuubu-color ;
-}
-#fukui{
-  @include basic;
-  top:$top4;
-  right:$right5;
-  background-color:$tyuubu-color ;
-}
-#yamanashi{
-  @include basic;
-  top:$top5;
-  right:$right3;
-  background-color:$tyuubu-color ;
-}
-#nagano{
-  @include tall;
-  top:$top4;
-  right:$right4;
-  background-color:$tyuubu-color ;
-}
-#gifu{
-  @include basic;
-  top:$top5;
-  right:$right5;
-  background-color:$tyuubu-color ;
-}
-#shizuoka{
-  @include basic;
-  top:$top6;
-  right:$right4;
-  background-color:$tyuubu-color ;
-}
-#aichi{
-  @include basic;
-  top:$top6;
-  right:$right5;
-  background-color:$tyuubu-color ;
-}
-// =======関西地方＝＝＝＝＝＝＝＝＝＝
-#mie{
-  @include basic;
-  top:$top6;
-  right:$right6;
-  background-color:$kansai-color ;
-}
-#shiga{
-  @include basic;
-  top:$top4;
-  right:$right6;
-  background-color:$kansai-color ;
-}
-#kyoto{
-  @include basic;
-  top:$top4;
-  right:$right7;
-  background-color:$kansai-color ;
-}
-#osaka{
-  @include basic;
-  top:$top5;
-  right:$right7;
-  background-color:$kansai-color ;
-}
-#hyogo{
-  @include tall;
-  top:$top4;
-  right:$right8;
-  background-color:$kansai-color ;
-}
-#nara{
-  @include basic;
-  top:$top5;
-  right:$right6;
-  background-color:$kansai-color ;
-}
-#wakayama{
-  @include basic;
-  top:$top6;
-  right:$right7;
-  background-color:$kansai-color ;
-  font-size: 14px;
-  line-height: 25px;
-}
-// ========中国地方＝＝＝＝＝＝
-#tottori{
-  @include basic;
-  top:$top4;
-  right:$right9;
-  background-color:$tyuugoku-color ;
-}
-#shimane{
-  @include basic;
-  top:$top4;
-  right:$right10;
-  background-color:$tyuugoku-color ;
-}
-#okayama{
-  @include basic;
-  top:$top5;
-  right:$right9;
-  background-color:$tyuugoku-color ;
-}
-#hiroshima{
-  @include basic;
-  top:$top5;
-  right:$right10;
-  background-color:$tyuugoku-color ;
-}
-#yamaguchi{
-  @include basic;
-  top:$top4;
-  right:$right11;
-  background-color:$tyuugoku-color ;
-}
-// =======四国地方＝＝＝＝＝＝
-#tokushima{
-  @include basic;
-  top:$top7;
-  right:$right9;
-  background-color:$sikoku-color ;
-}
-#kagawa{
-  @include basic;
-  top:$top6;
-  right:$right9;
-  background-color:$sikoku-color ;
-}
-#ehime{
-  @include basic;
-  top:$top6;
-  right:$right10;
-  background-color:$sikoku-color ;
-}
-#kochi{
-  @include basic;
-  top:$top7;
-  right:$right10;
-  background-color:$sikoku-color ;
-}
-// =======九州地方＝＝＝＝＝＝＝
-#fukuoka{
-  @include basic;
-  top:$top4;
-  right:$right12;
-  background-color:$kyuusyuu-color ;
-}
-#saga{
-  @include basic;
-  top:$top4;
-  right:$right13;
-  background-color:$kyuusyuu-color ;
-}
-#nagasaki{
-  @include basic;
-  top:$top4;
-  right:$right14;
-  background-color:$kyuusyuu-color ;
-}
-#kumamoto{
-  @include basic;
-  top:$top5;
-  right:$right13;
-  background-color:$kyuusyuu-color ;
-}
-#oita{
-  @include basic;
-  top:$top5;
-  right:$right12;
-  background-color:$kyuusyuu-color ;
-}
-#miyazaki{
-  @include basic;
-  top:$top6;
-  right:$right12;
-  background-color:$kyuusyuu-color ;
-}
-#kagoshima{
-  @include basic;
-  top:$top6;
-  right:$right13;
-  background-color:$kyuusyuu-color ;
-  font-size: 14px;
-  line-height: 25px;
-}
-#okinawa{
-  @include basic;
-  top:$top7;
-  right:$right14;
-  background-color:#d7c447 ;
+    #yamagata{
+      @include basic;
+      background-color: $touhoku-color;
+      top:$top2;
+      right:$right2;
+    }
+    #fukushima{
+      @include basic;
+      background-color: $touhoku-color;
+      top:$top3;
+      right:$right1;
+    }
+    // ＝＝＝＝関東地方＝＝＝＝＝＝＝＝＝＝＝
+    #ibaraki{
+      @include basic;
+      top:$top4;
+      right:$right1;
+      background-color:$kantou-color ;
+    }
+    #tochigi{
+      @include basic;
+      top:$top4;
+      right:$right2;
+      background-color:$kantou-color ;
+    }
+    #gunma{
+      @include basic;
+      top:$top4;
+      right:$right3;
+      background-color:$kantou-color ;
+    }
+    #saitama{
+      @include basic;
+      top:$top5;
+      right:$right2;
+      background-color:$kantou-color ;
+    }
+    #chiba{
+      @include basic;
+      top:$top5;
+      right:$right1;
+      background-color:$kantou-color ;
+    }
+    #tokyo{
+      @include basic;
+      top:$top6;
+      right:$right2;
+      background-color:$kantou-color ;
+    }
+    #kanagawa{
+      @include basic;
+      top:$top6;
+      right:$right3;
+      background-color:$kantou-color ;
+    }
+    // ＝＝＝＝中部地方＝＝＝＝＝＝＝
+    #niigata{
+      @include wide;
+      top:$top3;
+      right:$right2;
+      background-color:$tyuubu-color ;
+    }
+    #toyama{
+      @include basic;
+      top:$top3;
+      right:$right4;
+      background-color:$tyuubu-color ;
+    }
+    #ishikawa{
+      @include basic;
+      top:$top3;
+      right:$right5;
+      background-color:$tyuubu-color ;
+    }
+    #fukui{
+      @include basic;
+      top:$top4;
+      right:$right5;
+      background-color:$tyuubu-color ;
+    }
+    #yamanashi{
+      @include basic;
+      top:$top5;
+      right:$right3;
+      background-color:$tyuubu-color ;
+    }
+    #nagano{
+      @include tall;
+      top:$top4;
+      right:$right4;
+      background-color:$tyuubu-color ;
+    }
+    #gifu{
+      @include basic;
+      top:$top5;
+      right:$right5;
+      background-color:$tyuubu-color ;
+    }
+    #shizuoka{
+      @include basic;
+      top:$top6;
+      right:$right4;
+      background-color:$tyuubu-color ;
+    }
+    #aichi{
+      @include basic;
+      top:$top6;
+      right:$right5;
+      background-color:$tyuubu-color ;
+    }
+    // =======関西地方＝＝＝＝＝＝＝＝＝＝
+    #mie{
+      @include basic;
+      top:$top6;
+      right:$right6;
+      background-color:$kansai-color ;
+    }
+    #shiga{
+      @include basic;
+      top:$top4;
+      right:$right6;
+      background-color:$kansai-color ;
+    }
+    #kyoto{
+      @include basic;
+      top:$top4;
+      right:$right7;
+      background-color:$kansai-color ;
+    }
+    #osaka{
+      @include basic;
+      top:$top5;
+      right:$right7;
+      background-color:$kansai-color ;
+    }
+    #hyogo{
+      @include tall;
+      top:$top4;
+      right:$right8;
+      background-color:$kansai-color ;
+    }
+    #nara{
+      @include basic;
+      top:$top5;
+      right:$right6;
+      background-color:$kansai-color ;
+    }
+    #wakayama{
+      @include basic;
+      top:$top6;
+      right:$right7;
+      background-color:$kansai-color ;
+    }
+    // ========中国地方＝＝＝＝＝＝
+    #tottori{
+      @include basic;
+      top:$top4;
+      right:$right9;
+      background-color:$tyuugoku-color ;
+    }
+    #shimane{
+      @include basic;
+      top:$top4;
+      right:$right10;
+      background-color:$tyuugoku-color ;
+    }
+    #okayama{
+      @include basic;
+      top:$top5;
+      right:$right9;
+      background-color:$tyuugoku-color ;
+    }
+    #hiroshima{
+      @include basic;
+      top:$top5;
+      right:$right10;
+      background-color:$tyuugoku-color ;
+    }
+    #yamaguchi{
+      @include basic;
+      top:$top4;
+      right:$right11;
+      background-color:$tyuugoku-color ;
+    }
+    // =======四国地方＝＝＝＝＝＝
+    #tokushima{
+      @include basic;
+      top:$top7;
+      right:$right9;
+      background-color:$sikoku-color ;
+    }
+    #kagawa{
+      @include basic;
+      top:$top6;
+      right:$right9;
+      background-color:$sikoku-color ;
+    }
+    #ehime{
+      @include basic;
+      top:$top6;
+      right:$right10;
+      background-color:$sikoku-color ;
+    }
+    #kochi{
+      @include basic;
+      top:$top7;
+      right:$right10;
+      background-color:$sikoku-color ;
+    }
+    // =======九州地方＝＝＝＝＝＝＝
+    #fukuoka{
+      @include basic;
+      top:$top4;
+      right:$right12;
+      background-color:$kyuusyuu-color ;
+    }
+    #saga{
+      @include basic;
+      top:$top4;
+      right:$right13;
+      background-color:$kyuusyuu-color ;
+    }
+    #nagasaki{
+      @include basic;
+      top:$top4;
+      right:$right14;
+      background-color:$kyuusyuu-color ;
+    }
+    #kumamoto{
+      @include basic;
+      top:$top5;
+      right:$right13;
+      background-color:$kyuusyuu-color ;
+    }
+    #oita{
+      @include basic;
+      top:$top5;
+      right:$right12;
+      background-color:$kyuusyuu-color ;
+    }
+    #miyazaki{
+      @include basic;
+      top:$top6;
+      right:$right12;
+      background-color:$kyuusyuu-color ;
+    }
+    #kagoshima{
+      @include basic;
+      top:$top6;
+      right:$right13;
+      background-color:$kyuusyuu-color ;
+    }
+    #okinawa{
+      @include basic;
+      top:$top7;
+      right:$right14;
+      background-color:#d7c447 ;
+    }
+    .pref-name{
+      font-size: 10px;
+      font-weight: bold;
+      height: 15px;
+      width: 40px;
+      background-color: honeydew;
+      margin: 10px auto 0 auto;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .target-area{
+      color: black;
+      background-color: white;
+    }
+    .target-area:hover{
+      transform: scale(1.3,1.3);
+    }
+  }
 }
