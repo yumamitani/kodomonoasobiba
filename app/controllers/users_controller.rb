@@ -67,7 +67,7 @@ class UsersController < ApplicationController
     if @user
       session[:user_id]= @user.id
     flash[:notice] = "ログインしました"
-    redirect_to("/reviews/index")
+    redirect_to("/")
     else
       @error_message = "ニックネームもしくはパスワードが間違っています"
       @nickname=params[:nickname]

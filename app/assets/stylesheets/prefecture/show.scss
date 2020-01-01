@@ -31,11 +31,12 @@ padding-top: 30px;
 .contents-box{
 background-color:white;
 height: 150px;
-width: 340px;
+width: 345px;
 margin:15px 15px 15px 15px;
 font-family: Arial,游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 display: flex;
 font-size: 13px;
+box-shadow: 0.5px 0.5px 0.5px 0.5px black ;
   .contents-box__image{
     height: 150px;
     width: 160px;
@@ -100,6 +101,10 @@ font-size: 13px;
       text-overflow: ellipsis;
     }
   }      
+}
+.contents-box:hover{
+  border: solid 2px $link-color;
+  box-sizing: border-box;
 }
 .prefecture-index-link{
   display: inline-block;
