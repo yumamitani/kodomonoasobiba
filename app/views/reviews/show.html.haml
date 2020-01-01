@@ -69,67 +69,33 @@
         投稿を修正する
 
 
-:javascript
-  let map
-  let geocoder
-  
-  function initMap(){
-  
-    geocoder = new google.maps.Geocoder()
-  
-    map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 15
-    });
-    let inputAddress = $('.address').text();
-  
-    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-      if (status == 'OK') {
-        map.setCenter(results[0].geometry.location);
+  :javascript
+    let map
+    let geocoder
+    
+    function initMap(){
+    
+      geocoder = new google.maps.Geocoder()
+    
+      map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 15
+      });
+      let inputAddress = $('.address').text();
+    
+      geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+        if (status == 'OK') {
+          map.setCenter(results[0].geometry.location);
 
-  let marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
-  
-  
-%script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLEMAP_KEY"]}&callback=initMap"}
-
-
-
-
-
--# .post_name
--#   ニックネーム：
--#   = link_to(@user.nickname, "/users/#{@user.id}/show")
--# .post_time
--#   投稿時間：
--#   = @review.created_at
--# .post_subject
--#   件名：
--#   = @review.subject
--# .post_text
--#   本文：
--#   = @review.text
--# - if Like.find_by(user_id: @current_user.id, review_id: @review.id)
--#   = link_to("/likes/#{@review.id}/destroy",{method: "post"}) do
--#     %i.far.fa-grin-squint.like_btn_already
--#     %span.likes_count= @likes_count
--# - else
--#   = link_to( "/likes/#{@review.id}/create",{method: "post"}) do
--#     %i.far.fa-grin-squint.like_btn
--#     %span.likes_count= @likes_count
--# .post_image{:style => "background-image: url(#{@review.image});"}
--# .post_text
--#   （参照URL）：
--#   = link_to("#{@review.movie}","#{@review.movie}")
--# - if @current_user.id == @user.id
--#   .edit_btn
--#     = link_to "-編集する-", "/reviews/#{@review.id}/edit"
--#   .destroy_btn
--#     = link_to "-削除する-", "/reviews/#{@review.id}/destroy" ,method: "post"
+    let marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+    
+    
+  %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLEMAP_KEY"]}&callback=initMap"}

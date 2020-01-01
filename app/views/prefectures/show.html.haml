@@ -81,20 +81,3 @@
                 %span.likes_count= @third_review.likes.count
             .contents-box__text
               =@third_review.text
-
-
-
-
-
-
-
-
-  -# ="#{@prefecture.name}の投稿一覧"
-  -# .review_main
-  -#   - @reviews.each do |review|
-  -#     .review_subject
-  -#       = link_to review.subject ,"/reviews/#{review.id}"
-  -#       %a.reviewer （投稿者）
-  -#       = link_to review.user.nickname ,"/users/#{review.user.id}", class:"user_nickname"
-  -#   .pagenate
-  -#     = paginate(@reviews)
