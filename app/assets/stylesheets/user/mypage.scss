@@ -99,6 +99,9 @@
           border-bottom: gray 1px solid;
           padding:2px;
           box-sizing: border-box;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
         }
         .like{
           height: 20px;

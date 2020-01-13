@@ -47,13 +47,11 @@ box-shadow: 0.5px 0.5px 0.5px 0.5px black ;
     object-fit: cover;
     }
   .contents-box__right{
-    // background-color:goldenrod;
     height: 150px;
     width: 180px;
     box-sizing: border-box; 
     color:black;
     .contents-box__user{
-    // background-color:green;
     height: 25px;
     width: 180px;
     line-height: 25px;
@@ -64,7 +62,6 @@ box-shadow: 0.5px 0.5px 0.5px 0.5px black ;
       overflow: hidden;
     }
     .contents-box__subject{
-      // background-color:palevioletred;
       height: 35px;
       width: 180px;
       display: flex;
@@ -72,7 +69,6 @@ box-shadow: 0.5px 0.5px 0.5px 0.5px black ;
       border: solid 1px gray;
       word-wrap: break-word;
       &--title{
-      // background-color:palevioletred;
       height: 35px;
       width: 160px;
       line-height: 30px;
@@ -81,7 +77,6 @@ box-shadow: 0.5px 0.5px 0.5px 0.5px black ;
       overflow: hidden;
       }    
       &--like{
-        // background-color:seagreen;
         height: 35px;
         width: 30px;
         line-height: 30px;
@@ -93,11 +88,11 @@ box-shadow: 0.5px 0.5px 0.5px 0.5px black ;
       }
     }
     .contents-box__text{
-      // background-color:darkolivegreen;
       height: 80px;
       width: 180px;
       padding: 2px 0px 2px 2px;
       border: solid 1px gray;
+      overflow: hidden;
       text-overflow: ellipsis;
     }
   }      
