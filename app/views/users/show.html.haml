@@ -46,31 +46,3 @@
                 %span.likes_count= review.likes.count
         =link_to "/users/#{@current_user.id}/favorite" ,class:"index-link" do
           全て表示する
-
-
-
-
-
--# .user_detail ユーザー詳細
--# .user_name
--#   = @user.nickname
--# .user_image
--#   %img{:src => "/user_images/#{@user.image_name}"}/
--# .user_review_index
--#   投稿一覧
--#   - @user.reviews.each do |review|
--#     .user_review_subject
--#       = link_to "#{review.subject}" ,"/show/#{review.id}"
--#   =========================
--# .user_likes_index
--#   %div ..いいねした投稿一覧.............
--#   - @likes.each do |like|
--#     - @review= Review.find_by(id: like.review_id)
--#     .user_likes_subject
--#       = link_to "#{@review.subject}" ,"/show/#{like.review_id}"
--#   %div ........................................
--# - if @current_user.id == @user.id
--#   %div
--#     = link_to("ユーザー情報を編集する" , "/users/#{@user.id}/edit")
--# .redirect_user_detail
--#   = link_to("ユーザー一覧へ" , "/users/index")
